@@ -11,9 +11,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body id="<%= yield(:body_id) %>" class="<%= controller_name %> <%= action_name %> <%= yield(:body_class) %> navbar-spacer">
-      <%= render 'layouts/navigation' %>
+  <body id="<%= yield(:body_id) %>" class="<%= controller_name %> <%= action_name %> <%= yield(:body_class) %>">
       <%= render 'layouts/messages' %>
-      <%= yield %>
+       <%= yield %>
   </body>
 </html>

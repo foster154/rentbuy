@@ -33,7 +33,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-style: normal;
 	margin: 0 0 20px 0;
 }
-h1 { font-size: 40px; line-height: 30px; }
+h1 { font-size: 40px; line-height: 30px; font-weight:700; }
 h2 { font-size: 32px; }
 h3 { font-size: 24px; }
 h4 { font-size: 18px; }
@@ -243,36 +243,18 @@ a:hover {
 .mar-right30 { margin-right: 30px; }
 
 /* top */
-.mar-top0 {
-	margin-top: 0;
-}
-.mar-top5 {
-	margin-top: 5px;
-}
-
-.mar-top10 {
-	margin-top: 10px;
-}
-
-.mar-top15 {
-	margin-top: 15px;
-}
-.mar-top20 {
-	margin-top: 20px;
-}
-.mar-top25 {
-	margin-top: 25px;
-}
-.mar-top30 {
-	margin-top: 30px;
-}
-.mar-top35 {
-	margin-top: 35px;
-}
-.mar-top40 {
-	margin-top: 40px;
-}
-
+.mar-top0 { margin-top: 0; }
+.mar-top5 { margin-top: 5px; }
+.mar-top10 { margin-top: 10px; }
+.mar-top15 { margin-top: 15px; }
+.mar-top20 { margin-top: 20px; }
+.mar-top25 { margin-top: 25px; }
+.mar-top30 { margin-top: 30px; }
+.mar-top35 { margin-top: 35px; }
+.mar-top40 { margin-top: 40px; }
+.mar-top50 { margin-top: 50px; }
+.mar-top60 { margin-top: 60px; }
+.mar-top70 { margin-top: 70px; }
 
 /* bottom */
 .mar-bot0 {

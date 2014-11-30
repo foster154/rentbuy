@@ -1,1 +1,36 @@
 // custom code
+
+// ==========================================
+// Nav
+// ==========================================
+
+.navbar-spacer {
+	padding-top: 100px;
+}
+
+// ==========================================
+// Layout & Formatting
+// ==========================================
+
+.text-center {
+	text-align: center;
+}
+
+.box-center {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+// ==========================================
+// Forms
+// ==========================================
+
+.form-inputs .control-group {
+	margin: 20px 0;
+	input {
+		border-radius: 3px;
+		border: 1px solid #CCC;
+		padding: 5px;
+	}
+}
+
