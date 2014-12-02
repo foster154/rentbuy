@@ -13,7 +13,13 @@
   </head>
   <body id="<%= yield(:body_id) %>" class="<%= controller_name %> <%= action_name %> <%= yield(:body_class) %> navbar-spacer">
       <%= render 'layouts/navigation' %>
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+      <div class="container">
+        <div class="row">
+          <%= render 'layouts/messages' %>
+        </div>
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
   </body>
 </html>

@@ -1,0 +1,43 @@
+<div class="container">
+
+  <h1 class="text-center">Properties</h1>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <%= link_to 'New Property', new_property_path, class: "btn btn-primary" %>
+
+      <table class="table mar-top20 properties-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Address</th>
+            <th>Beds</th>
+            <th>Baths</th>
+            <th>Payment</th>
+            <th>Area</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody class="table-striped">
+          <% @properties.each do |property| %>
+            <tr>
+              <td><%= image_tag property.property_image.url(:thumb) %></td>
+              <td><%= property.address %></td>
+              <td><%= property.beds %></td>
+              <td><%= property.baths %></td>
+              <td>$<%= property.payment %></td>
+              <td><%= property.area.name %></td>
+              <td><%= link_to 'Edit', edit_property_path(property) %> | 
+              <%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+    </div>
+
+  </div>
+</div>

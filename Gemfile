@@ -16,6 +16,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'paperclip'
 
 
 group :development do

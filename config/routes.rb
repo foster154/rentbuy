@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :properties
+
   resources :areas
 
   root to: 'pages#home'

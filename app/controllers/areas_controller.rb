@@ -10,6 +10,7 @@ class AreasController < ApplicationController
 
   def show
     respond_with(@area)
+    @properties = Properties.where(area_id: @area.id)
   end
 
   def new
