@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="text-center">Guests</h1>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <%= will_paginate @guests, renderer: BootstrapPagination::Rails %>
+      <ul class="guest-list">
+      
+      <%= render @guests %>
+
+      
+    </ul>
+    <%= will_paginate @guests, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

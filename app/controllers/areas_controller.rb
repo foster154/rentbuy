@@ -9,8 +9,8 @@ class AreasController < ApplicationController
   end
 
   def show
+    @properties = Property.where(area_id: @area.id).order(updated_at: :desc)
     respond_with(@area)
-    @properties = Properties.where(area_id: @area.id)
   end
 
   def new

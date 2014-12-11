@@ -1,0 +1,13 @@
+<%= simple_form_for(@query) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :guest_id %>
+    <%= f.input :area_id %>
+    <%= f.input :payment %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

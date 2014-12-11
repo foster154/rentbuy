@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Guest:</strong>
+  <%= @query.guest_id %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @query.area_id %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @query.payment %>
+</p>
+
+<%= link_to 'Edit', edit_query_path(@query) %> |
+<%= link_to 'Back', queries_path %>

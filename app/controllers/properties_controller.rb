@@ -8,10 +8,6 @@ class PropertiesController < ApplicationController
     respond_with(@properties)
   end
 
-  def show
-    respond_with(@property)
-  end
-
   def new
     @property = Property.new
     respond_with(@property)
@@ -23,17 +19,17 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     flash[:notice] = 'Property was successfully added.' if @property.save
-    respond_with(@property)
+    redirect_to area_path(id: @property.area_id)
   end
 
   def update
     flash[:notice] = 'Property was successfully updated.' if @property.update(property_params)
-    respond_with(@property)
+    redirect_to area_path(id: @property.area_id)
   end
 
   def destroy
     @property.destroy
-    respond_with(@property)
+    redirect_to area_path(id: @property.area_id)
   end
 
   private

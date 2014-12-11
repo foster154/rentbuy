@@ -34,11 +34,39 @@
 	}
 }
 
+// .control-group .controls {
+// 	input {
+// 		border-radius: 3px;
+// 		border: 1px solid #CCC;
+// 		padding: 5px;
+// 	}
+// }
+
+// Fix positioning of checkboxes on guests#show page
+// .checkbox input[type="checkbox"] {
+// 	margin-top: -34px;
+// }
+
+#query_payment {
+	width: 70px;
+}
+
 .file-upload-area {
 	margin: 10px 0 30px 0;
 	padding: 12px;
 	border: 3px dashed #CCC;
 
+}
+
+.front-page-form {
+	color: black;
+}
+
+.btn-amoeba {
+	background: #2B8074;
+	color: white;
+	border-radius: 2px !important;
+	padding: 14px !important;
 }
 
 // ==========================================
@@ -51,3 +79,35 @@
 		vertical-align: middle !important;
 	}
 }
+
+// ==========================================
+// Guests results
+// ==========================================
+
+ul.guest-list {
+	list-style-type: none;
+	margin-top: 20px;
+	li {
+	}
+	.guest-date {
+		float: right;
+		font-weight: 500;
+		font-size: 18px;
+	}
+	.guest-info {
+		font-weight: 500;
+		font-size: 18px;
+	}
+	.query {
+		font-size: 14px;
+		margin: 0 3px;
+		padding: 2px 5px;	
+		background: #D6F2EE;
+		white-space: nowrap;
+		border-radius: 3px;
+
+	}
+}
+
+
+

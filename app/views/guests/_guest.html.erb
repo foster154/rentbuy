@@ -1,0 +1,9 @@
+        <li>
+          <div class="guest-date"><%= guest.created_at.strftime("%d %b %Y") %></div>
+          <span class="guest-info"><%= guest.email %> (<%= guest.name ? guest.name : "no name provided" %>)</span>
+          <br />
+          <% guest.queries.each do | query | %>
+          <span class="query"><%= "#{query.area.name}: $#{query.payment}" %></span>
+          <% end %>
+        </li>
+        <hr>

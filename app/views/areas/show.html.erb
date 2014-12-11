@@ -1,20 +1,46 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container">
-	<div class="row">
-		<%= link_to '<- All Areas', areas_path %>
-		<h1 class="text-center"><%= @area.name %></h1>
-		<h4 class="text-center"><%= @area.city %>, <%= @area.state %></h4>
 
+  <h1 class="text-center">Properties: <%= @area.name %></h1>
 
-		<div class="text-center">
-			<%= link_to 'Edit', edit_area_path(@area) %> |
-			<%= link_to 'Delete', @area, method: :delete, data: { confirm: 'Are you sure?' } %>
-		</div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+    <%= link_to '<- All Areas', areas_path %>
+    <%= link_to 'New Property', new_property_path, class: "btn btn-primary float-right" %>
 
-		<div class="col-md-6 col-md-offset-3 mar-top60">
-			<p class="text-center">(insert table of <% @area.name %> properties here)</p>
-		</div>
-		
-	</div>
+      <table class="table mar-top20 properties-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Address</th>
+            <th>Beds</th>
+            <th>Baths</th>
+            <th>Payment</th>
+            <th>Area</th>
+            <th>Date</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody class="table-striped">
+          <% @properties.each do |property| %>
+            <tr>
+              <td><%= image_tag property.property_image.url(:thumb) %></td>
+              <td><%= property.address %></td>
+              <td><%= property.beds %></td>
+              <td><%= property.baths %></td>
+              <td>$<%= property.payment %></td>
+              <td><%= property.area.name %></td>
+              <td><%= property.updated_at.strftime("%d %b %Y") %></td>
+              <td><%= link_to 'Edit', edit_property_path(property) %> | 
+              <%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+    </div>
+
+  </div>
 </div>
