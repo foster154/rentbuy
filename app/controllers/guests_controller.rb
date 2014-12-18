@@ -23,17 +23,21 @@ class GuestsController < ApplicationController
   end
 
   def edit
+    @query = @guest.queries.last
+    @areas = Area.all
+    @properties = Property.where(area_id: @query.area.id, payment: (@query.payment - 100)..(@query.payment + 100)).order(updated_at: :desc, payment: :desc).limit(3)
+    render layout: 'application-front'
   end
 
   def create
     @guest = Guest.new(guest_params)
-    flash[:notice] = 'Guest was successfully created.' if @guest.save
+    @guest.save
     redirect_to results_path(id: @guest.id)
   end
 
   def update
-    flash[:notice] = 'Guest was successfully updated.' if @guest.update(guest_params)
-    respond_with(@guest)
+    @guest.update(guest_params)
+    redirect_to results_path(id: @guest.id)
   end
 
   def destroy
@@ -47,6 +51,13 @@ class GuestsController < ApplicationController
     end
 
     def guest_params
-      params.require(:guest).permit(:name, :email, queries_attributes: [:guest_id, :area_id, :payment])
+      params.require(:guest).permit(:name, 
+                                    :email, 
+                                    :beds, 
+                                    :baths, 
+                                    :areas, 
+                                    :foreclosures,
+                                    :short_sales,
+                                    queries_attributes: [:guest_id, :area_id, :payment])
     end
 end

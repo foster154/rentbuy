@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20141209040432) do
     t.datetime "updated_at"
     t.boolean  "foreclosures"
     t.boolean  "short_sales"
+    t.integer  "beds"
+    t.integer  "baths"
+    t.string   "areas"
   end
 
   create_table "properties", force: true do |t|

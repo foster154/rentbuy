@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :queries
 
-  resources :guests, except: :show
+  resources :guests
 
   resources :properties, except: :show
 
@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   resources :users
 
   match '/dashboard', 	to: 'users#show', 		via: 'get'
-  match '/results',   	to: 'guests#show',      via: 'get'
+  match '/results',   	to: 'guests#edit',      via: 'get'
 end

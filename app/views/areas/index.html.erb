@@ -21,7 +21,7 @@
               <td><%= area.name %></td>
               <td><%= area.city %></td>
               <td><%= area.state %></td>
-              <td><%= link_to 'View Properties', area %></td>
+              <td><%= link_to 'Edit', edit_area_path(area.id) %> | <%= link_to 'View Properties', area %></td>
             </tr>
           <% end %>
         </tbody>

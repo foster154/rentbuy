@@ -1,23 +1,28 @@
-<div class="front-page-search-box mar-top30">
+<div class="front-page-search-box mar-top50">
 	<%= simple_form_for(@guest) do |g| %>
 
 	  <%= g.error_notification %>
 
 	  <%= g.simple_fields_for :queries do |q| %>
-	  <div class="row">
-	  		<div class="col-sm-4 col-sm-offset-2">
-		  		<%= q.input :payment, label: false, placeholder: "Current Rent" %>
+	  	<div class="row">
+	  		<div class="col-sm-4 col-sm-offset-2
+	  					col-xs-12 col-xs-offset-0">
+	  			<h1 class="my-rent-is">My rent is</h1>
+	  		</div>
+	  		<div class="col-sm-4 col-sm-offset-0
+	  					col-xs-6 col-xs-offset-3">
+		  		<%= q.input_field :payment, label: false %>
 		  	</div>
-		  	<div class="col-sm-4">
+		</div>
+
+		<div class="row">
+		  	<div class="clear mar-top-40">
 		  		<%= q.input :area_id, collection: @areas, label: false, prompt: "Choose an Area" %>
 		    </div>
 	  </div> <!-- /.row -->
 	  <% end %>
-	  <div class="clear">
-	    <%= g.input :email, label: false, placeholder: "Email Address" %>
-	  </div>
 
-	  <div class="form-actions">
+	  <div class="form-actions mar-top50">
 	    <%= g.button :submit, "Search", class: "btn-amoeba" %>
 	  </div>
 	<% end %>
