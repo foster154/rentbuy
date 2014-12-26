@@ -438,7 +438,10 @@ h1 div.navbar-brand {
 
 section.featured {
 	padding: 150px 0 75px 0;
-	background: #70B9B0;
+	background: #ffffff url(image-path('background.jpg')) no-repeat center center fixed;
+	background-size: cover;
+	// background: #ffffff url(image-path('dollar-sign.png')) no-repeat scroll 4px 10px;
+
 	color: #fdfdfd;
 }
 
@@ -600,6 +603,11 @@ section.featured.inner {
 
 .fullwidthbanner a.btn {
 	color: #fff;
+}
+
+.fp-content {
+	background-color: rgba(0, 0, 0, .7);
+	padding: 50px 0;
 }
 
 .front-page-search-box {
@@ -981,12 +989,18 @@ div.cform-response-output {
  ================= */
 
 section#footer {
-	background: #242424;
+	// background: #242424;
+	color: black;
 	margin: 0;
 }
 
 section#footer .copyright {
 	text-align: center;
+}
+
+.copyright {
+	margin-top: 50px;
+
 }
 
 /* footer social icons */
