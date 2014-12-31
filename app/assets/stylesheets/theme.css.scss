@@ -10,6 +10,11 @@
 /*==========================================================================
   General
   ========================================================================== */
+html {
+	height:100%;
+ 	min-height:100%;
+}
+
 body {
 	color:#777;
 	background: #f7f7f7;
@@ -439,14 +444,14 @@ h1 div.navbar-brand {
 section.featured {
 	padding: 150px 0 75px 0;
 	background: #ffffff url(image-path('background.jpg')) no-repeat center center fixed;
-	background-size: cover;
-	// background: #ffffff url(image-path('dollar-sign.png')) no-repeat scroll 4px 10px;
-
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 	color: #fdfdfd;
 }
 
 section.featured h2.slogan {
-	//color: #fff;
 	color: $base_dk2;
 	font-size: 38px;
 	font-weight: 500;
@@ -608,6 +613,7 @@ section.featured.inner {
 .fp-content {
 	background-color: rgba(0, 0, 0, .7);
 	padding: 50px 0;
+	margin-bottom: 100px;
 }
 
 .front-page-search-box {
@@ -989,9 +995,9 @@ div.cform-response-output {
  ================= */
 
 section#footer {
-	// background: #242424;
 	color: black;
 	margin: 0;
+	padding: 0,0,0,0;
 }
 
 section#footer .copyright {
@@ -999,8 +1005,8 @@ section#footer .copyright {
 }
 
 .copyright {
-	margin-top: 50px;
-
+	//margin-top: 150px;
+	display: block;
 }
 
 /* footer social icons */
@@ -1199,7 +1205,7 @@ Media queries
 	}
 
 	section.featured {
-		padding-top: 100px;
+		padding: 100px 0;
 	}
 
 	h2.slogan-subhead {

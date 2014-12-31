@@ -3,4 +3,12 @@ class PagesController < ApplicationController
 		render layout: 'application-front'
 	end
 
+	def privacy_policy
+		render layout: 'application-front'
+	end
+
+	def fair_housing
+		render layout: 'application-front'
+	end
+
 end
