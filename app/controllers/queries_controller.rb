@@ -22,8 +22,11 @@ class QueriesController < ApplicationController
 
   def create
     @query = Query.new(query_params)
-    @query.save
-    redirect_to results_path(id: @query.guest.id)
+    if @query.save
+      redirect_to results_path(id: @query.guest.id)
+    else
+      redirect_to :back
+    end
   end
 
   def update

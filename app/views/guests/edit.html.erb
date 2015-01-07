@@ -5,7 +5,12 @@
 		<div class="row mar-bot40">
 			<div class="col-md-offset-3 col-md-6">
 				<div class="section-header mar-top50">
+					<% if @query.payment && @query.area %>
 					<h3>A $<%= @query.payment %>/month mortgage in the <%= @query.area.name %> area of <%= @query.area.city %> would be able to buy: </h3>
+					<% else %>
+					<h3>Homes like this may be available in your area</h3>
+					<p>(to see more personalized results, input a rent amount and area)</p>
+					<% end %>
 				</div>
 			</div>
 		</div>

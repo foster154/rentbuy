@@ -11,7 +11,7 @@ class GuestsController < ApplicationController
   def show
     @query = @guest.queries.last
     @areas = Area.all
-    @properties = Property.where(area_id: @query.area.id, payment: (@query.payment - 100)..(@query.payment + 100)).order(updated_at: :desc, payment: :desc).limit(3)
+    find_properties
     render layout: 'application-front'
   end
 
@@ -25,7 +25,7 @@ class GuestsController < ApplicationController
   def edit
     @query = @guest.queries.last
     @areas = Area.all
-    @properties = Property.where(area_id: @query.area.id, payment: (@query.payment - 100)..(@query.payment + 100)).order(updated_at: :desc, payment: :desc).limit(3)
+    find_properties
     render layout: 'application-front'
   end
 
@@ -59,5 +59,17 @@ class GuestsController < ApplicationController
                                     :foreclosures,
                                     :short_sales,
                                     queries_attributes: [:guest_id, :area_id, :payment])
+    end
+
+    def find_properties
+      if @query.payment && @query.area
+        @properties = Property.where(area_id: @query.area.id, payment: (@query.payment - 100)..(@query.payment + 100)).order(updated_at: :desc, payment: :desc).limit(3)
+      elsif @query.payment && @query.area.blank?
+        @properties = Property.where(payment: (@query.payment - 100)..(@query.payment + 100)).order(updated_at: :desc, payment: :desc).limit(3)
+      elsif @query.payment.blank? && @query.area_id
+        @properties = Property.where(area_id: @query.area.id).order(updated_at: :desc, payment: :desc).limit(3)
+      else
+        @properties = Property.all.order(updated_at: :desc, payment: :desc).limit(3)
+      end
     end
 end
