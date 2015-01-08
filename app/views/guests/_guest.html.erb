@@ -3,7 +3,18 @@
           <span class="guest-info"><%= guest.email %></span>
           <br />
           <% guest.queries.each do | query | %>
-          <span class="query"><%= "#{query.area.name}: $#{query.payment}" %></span>
+          <span class="query">
+          	<% if query.area && query.payment %> 
+          		<%= "#{query.area.name}: $#{query.payment}" %>
+          	<% elsif query.area.blank? && query.payment %>
+          		<%= "(no area specified): $#{query.payment}" %>
+          	<% elsif query.payment.blank? && query.area %>
+          		<%= "#{query.area.name}: (no payment specified)" %>
+          	<% elsif query.area.blank? && query.payment.blank? %>
+          		<%= "no area or payment specified" %>
+          	<% end %>
+          		
+          </span>
           <% end %>
         </li>
         <hr>

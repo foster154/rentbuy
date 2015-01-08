@@ -4,11 +4,11 @@
 
 		<div class="row mar-bot40">
 			<div class="col-md-offset-3 col-md-6">
-				<div class="section-header mar-top50">
+				<div class="section-header mar-top10">
 					<% if @query.payment && @query.area %>
 					<h3>A $<%= @query.payment %>/month mortgage in the <%= @query.area.name %> area of <%= @query.area.city %> would be able to buy: </h3>
 					<% else %>
-					<h3>Homes like this may be available in your area</h3>
+					<h3>Homes like this may be available in your area...</h3>
 					<p>(to see more personalized results, input a rent amount and area)</p>
 					<% end %>
 				</div>
@@ -19,31 +19,32 @@
 
 		
 		<div class="row">
-
-		<% if @guest.email.blank? %>
-			<h2 class="text-center">Want to see more homes you may be qualified for?</h2>
-			<!-- <p class="text-center">Tell us more about what you're looking for, and where we should send the results.</p> -->
-			
-			<div class="refine-results col-sm-3 col-sm-offset-5">
-				<%= render 'layouts/messages' %>
-				<%= simple_form_for @guest do |g| %>
-					<p class="form-header">I'm interested in...</p>
-					<%= g.input_field :beds, label: false, placeholder: "# of beds", class: "beds-field" %>
-					<%= g.input_field :baths, label: false, placeholder: "# of baths", class: "baths-field" %>
-					<%= g.input :areas, as: :text, label: false, placeholder: "Areas of interest" %>
-					<%= g.input :foreclosures, label: "Include free foreclosure list" %>
-					<%= g.input :short_sales, label: "Include free shortsale list" %>
-					<p class="form-header">Send results to...</p>
-					<%= g.input :email, label: false, placeholder: "Email Address" %>
-					<div class="form-actions">
-					    <%= g.button :submit, "Submit", class: "btn-amoeba" %>
+			<div class="col-xs-12">
+				<% if @guest.email.blank? %>
+					<h2 class="text-center">Want to see more homes you may be qualified for?</h2>
+					<!-- <p class="text-center">Tell us more about what you're looking for, and where we should send the results.</p> -->
+					
+					<div class="refine-results col-xs-12 col-sm-offset-5
+														 col-xs-offset-2">
+						<%= render 'layouts/messages' %>
+						<%= simple_form_for @guest do |g| %>
+							<p class="form-header">I'm interested in...</p>
+							<%= g.input_field :beds, label: false, placeholder: "# of beds", class: "beds-field" %>
+							<%= g.input_field :baths, label: false, placeholder: "# of baths", class: "baths-field" %>
+							<%= g.input :areas, as: :text, label: false, placeholder: "Areas of interest" %>
+							<%= g.input :foreclosures, label: "Include free foreclosure list" %>
+							<%= g.input :short_sales, label: "Include free shortsale list" %>
+							<p class="form-header">Send me the results at...</p>
+							<%= g.input :email, label: false, placeholder: "Email Address", required: true %>
+							<div class="form-actions">
+							    <%= g.button :submit, "Submit", class: "btn-amoeba" %>
+							</div>
+						<% end %>
 					</div>
+				<% else %>
+					<h4 class="text-center mar-top50">Your request for more information has been received! We will contact you shortly.</h4>
 				<% end %>
 			</div>
-		<% else %>
-			<h4 class="text-center mar-top50">Your request for more information has been received! We will contact you shortly.</h4>
-		<% end %>
-
 		</div>
 					
 </div>
