@@ -18,6 +18,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
+    set_payment_category
     flash[:notice] = 'Property was successfully added.' if @property.save
     redirect_to area_path(id: @property.area_id)
   end

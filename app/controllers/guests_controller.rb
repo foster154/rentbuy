@@ -63,9 +63,9 @@ class GuestsController < ApplicationController
 
     def find_properties
       if @query.payment && @query.area
-        @properties = Property.where(area_id: @query.area.id, payment: (@query.payment - 100)..(@query.payment + 100)).order(updated_at: :desc, payment: :desc).limit(3)
+        @properties = Property.where(area_id: @query.area.id, payment: (@query.payment - 200)..(@query.payment + 200)).order(updated_at: :desc, payment: :desc).limit(3)
       elsif @query.payment && @query.area.blank?
-        @properties = Property.where(payment: (@query.payment - 100)..(@query.payment + 100)).order(updated_at: :desc, payment: :desc).limit(3)
+        @properties = Property.where(payment: (@query.payment - 200)..(@query.payment + 200)).order(updated_at: :desc, payment: :desc).limit(3)
       elsif @query.payment.blank? && @query.area_id
         @properties = Property.where(area_id: @query.area.id).order(updated_at: :desc, payment: :desc).limit(3)
       else
