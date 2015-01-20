@@ -72,4 +72,5 @@ class GuestsController < ApplicationController
         @properties = Property.all.order(updated_at: :desc, payment: :desc).limit(3)
       end
     end
+
 end

@@ -675,8 +675,9 @@ About / Results
 	box-sizing:border-box;
 	margin: 0 0 20px 0;
 	img {
-		width: 200px;
-		height: 130px;
+		width: 100%;
+		max-width: 400px;
+		//height: 130px;
 	}
 }
 
