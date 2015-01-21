@@ -17,6 +17,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'paperclip'
+gem 'aws-sdk', '~> 1.5.7'
 gem 'will_paginate', '3.0.6' # pagination
 gem 'will_paginate-bootstrap', '1.0.1' # pagination 
 
