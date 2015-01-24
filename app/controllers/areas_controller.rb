@@ -3,13 +3,15 @@ class AreasController < ApplicationController
 
   respond_to :html
 
+  helper_method :sort_column, :sort_direction
+
   def index
     @areas = Area.all
     respond_with(@areas)
   end
 
   def show
-    @properties = Property.where(area_id: @area.id).order(updated_at: :desc)
+    @properties = Property.where(area_id: @area.id).order(sort_column + " " + sort_direction)
     respond_with(@area)
   end
 
@@ -44,5 +46,13 @@ class AreasController < ApplicationController
 
     def area_params
       params.require(:area).permit(:name, :city, :state)
+    end
+
+    def sort_column
+      Property.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"  # set default sort column if none specified
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"  # set default sort order if none specified (& sanitize)
     end
 end

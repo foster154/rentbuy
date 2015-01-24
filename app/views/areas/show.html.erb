@@ -11,12 +11,12 @@
         <thead>
           <tr>
             <th></th>
-            <th>Address</th>
-            <th>Beds</th>
-            <th>Baths</th>
-            <th>Payment</th>
-            <th>Area</th>
-            <th>Date</th>
+            <th><%= sortable "address" %>  <i class="fa fa-sort"></i></th>
+            <th><%= sortable "beds" %>  <i class="fa fa-sort"></i></th>
+            <th><%= sortable "baths" %>  <i class="fa fa-sort"></i></th>
+            <th><%= sortable "payment" %>  <i class="fa fa-sort"></i></th>
+            <th><%= sortable "area" %>  <i class="fa fa-sort"></i></th>
+            <th><%= sortable "updated_at", "Date" %>  <i class="fa fa-sort"></i></th>
             <th></th>
           </tr>
         </thead>

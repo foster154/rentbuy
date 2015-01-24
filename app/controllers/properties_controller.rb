@@ -3,8 +3,10 @@ class PropertiesController < ApplicationController
 
   respond_to :html
 
+  helper_method :sort_column, :sort_direction
+
   def index
-    @properties = Property.all
+    @properties = Property.all.order(sort_column + " " + sort_direction)
     respond_with(@properties)
   end
 
@@ -39,5 +41,13 @@ class PropertiesController < ApplicationController
 
     def property_params
       params.require(:property).permit(:address, :beds, :baths, :payment, :area_id, :property_image)
+    end
+
+    def sort_column
+      Property.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"  # set default sort column if none specified
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"  # set default sort order if none specified (& sanitize)
     end
 end
