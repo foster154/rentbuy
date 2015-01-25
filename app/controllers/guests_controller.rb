@@ -37,6 +37,9 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update(guest_params)
+    if @guest.email
+      GuestMailer.request_form_submission(@guest).deliver
+    end
     redirect_to results_path(id: @guest.id)
   end
 
