@@ -91,6 +91,10 @@ small {
 .align-right { text-align: right; }
 .align-center { text-align: center; }
 
+/* --- quick columns --- */
+.col-left { float: left; width: 45%}
+.col-right { float: right; width: 45%}
+
 /* ---- padding ---- */
 /* top */
 .pad-top0 { padding-top: 0; }
@@ -430,6 +434,7 @@ div.results {
 }
 
 .property-result-wrapper {
+	display: inline-block;
 	background-color: white;
 	padding: 20px 20px 10px 20px;
 }
@@ -439,7 +444,7 @@ div.results {
 	margin-bottom: 10px;
 	img {
 		width: 100%;
-		max-width: 400px;
+		max-width: 350px;
 		//height: 130px;
 	}
 }

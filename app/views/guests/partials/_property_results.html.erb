@@ -1,6 +1,12 @@
 <div class="results container-fluid">
 	<div class="row">
-		<h1 class="align-center mar-top50">Check out the monthly mortgages on these homes!</h1>
+		<% if @properties.size > 1 %>
+			<h1 class="align-center mar-top50">Check out the monthly mortgages on these homes!</h1>
+		<% elsif @properties.size == 1 %>
+			<h1 class="align-center mar-top50">Check out the monthly mortgage on this home!</h1>
+		<% elsif @properties.size == 0 %>
+			<h1 class="align-center mar-top50">No results found... Want to search again?</h1>
+		<% end %>
 	</div>
 
 	<div class="container">
@@ -12,8 +18,8 @@
 		<div class="col-md-4">
 		<% elsif @properties.size == 2 %>
 		<div class="col-md-6">
-		<% elsif @properties.size < 2 %>
-		<div class="col-md-6">
+		<% elsif @properties.size == 1 %>
+		<div class="col-md-12">
 		<% end %>
 
 			<div class="property-result-wrapper">
@@ -28,32 +34,31 @@
 		<% end %>
 
 		<% if @properties.blank? %>
-			<div class="no-results">
+			<div class="col-md-6 col-md-offset-3 no-results">
 				<div class="property-result-wrapper">
-					<figure class="property-photo"><span><%= image_tag 'no-property-result.jpg' %></span></figure>
-					<h4>No results found</h4>
-					<span>Try a new search...</span><br />
-					<span>Or let someone help you look!</span>
+					<div class="col-left">
+						<figure class="property-photo"><span><%= image_tag 'no-property-result.jpg' %></span></figure>
+						<h4>No results found</h4>
+						<span>Try a new search...</span><br />
+						<span>Or let someone help you look!</span>
+					</div>
+					<div class="col-right">
+						<h4>Try a new search:</h4>
+						<%= simple_form_for @query, :url => '/queries', :method => :post do |f| %>
+							<%= f.error_notification %>
+
+							<div class="form-inputs">
+							<%= f.input :guest_id, :as => :hidden %>
+							<%= f.input :payment, label: false, class: "payment-input" %>
+							<%= f.input :area_id, collection: @areas, label: false, prompt: "Choose an Area" %>
+							</div>
+
+							<div class="form-actions">
+							<%= f.button :submit, "Find Properties", class: "btn-rbsubmit" %>
+							</div>
+						<% end %>
+					</div>
 				</div>
-			</div>
-
-
-			<div class="col-md-3">
-				<h4>Try a new search:</h4>
-				<%= simple_form_for @query, :url => '/queries', :method => :post do |f| %>
-				
-				  <%= f.error_notification %>
-
-				  <div class="form-inputs">
-				    <%= f.input :guest_id, :as => :hidden %>
-				    <%= f.input :payment, label: false, class: "payment-input" %>
-				    <%= f.input :area_id, collection: @areas, label: false, prompt: "Choose an Area" %>
-				  </div>
-
-				  <div class="form-actions">
-				    <%= f.button :submit, "Find Properties", class: "btn-amoeba" %>
-				  </div>
-				 <% end %>
 			</div>
 		<% end %>
 	</div>
