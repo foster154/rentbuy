@@ -1,5 +1,5 @@
 <%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-fixed-top <%= "navbar-front" unless user_signed_in? %>">
+<nav class="navbar <%= "navbar-front" unless user_signed_in? %>">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -10,7 +10,7 @@
       </button>
       <h1>
         
-        <div class="navbar-brand"><i class="fa fa-home"></i> My Rent Will Buy</div>
+        <div class="navbar-brand">Rent or Buy?</div>
       </h1>
     </div>
     <div class="collapse navbar-collapse">

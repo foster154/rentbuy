@@ -1,0 +1,50 @@
+<h1 class="text-center mar-top40">A couple more questions...</h1>
+<p class="text-center col-sm-6 col-sm-offset-3 mar-top10">Do we want some text here? Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+
+<div class="row front-page-search-box mar-top70 align-center">
+	<%= simple_form_for @prequal do |f| %>
+
+	  <%= f.error_notification %>
+
+	  	<div class="row">
+  			<h1 class="prequalify2-field align-center">
+	  			Are you self-employed?
+	  			<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Loans for self-employed borrowers typically require more documentation for items like your income and assets.">
+	  				<i class="fa fa-question-circle"></i>
+	  			</span>
+  			</h1>
+	  	</div>
+  		<div class="row">
+	  		<%= f.input :self_employed, as: :radio_buttons, label: false %>
+	  	</div>
+
+		<div class="row">
+  			<h1 class="prequalify2-field">
+  				Are you a first-time Home Buyer? 
+  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="There are special loans for first time home buyers and you may even qualify for a zero down, or very low down payment loan.">
+  					<i class="fa fa-question-circle"></i>
+  				</span>
+  			</h1>
+	  	</div>
+  		<div class="row align-center">
+	  		<%= f.input :first_time_buyer, as: :radio_buttons, label: false %>
+	  	</div>
+
+		<div class="row">
+  			<h1 class="prequalify2-field">
+  				Have you served in the active military?
+  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Veterans can earn a special zero down loan and you may qualify if you served in the active military!">
+  					<i class="fa fa-question-circle"></i>
+  				</span>
+  			</h1>
+	  	</div>
+  		<div class="row">
+	  		<%= f.input :military, as: :radio_buttons, label: false %>
+	  	</div>
+
+	  <div class="form-actions mar-top50 text-center">
+	    <%= f.button :submit, "Next >>", class: "btn-rbsubmit" %>
+	  </div>
+	<% end %>
+</div>

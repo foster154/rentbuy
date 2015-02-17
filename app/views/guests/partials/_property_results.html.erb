@@ -1,0 +1,112 @@
+<div class="results container-fluid">
+	<div class="row">
+		<h1 class="align-center mar-top50">Check out the monthly mortgages on these homes!</h1>
+	</div>
+
+	<div class="container">
+	<div class="row align-center mar-bot40 mar-top30">
+
+		<% @properties.each do |property| %>
+
+		<% if @properties.size == 3 %> 
+		<div class="col-md-4">
+		<% elsif @properties.size == 2 %>
+		<div class="col-md-6">
+		<% elsif @properties.size < 2 %>
+		<div class="col-md-6">
+		<% end %>
+
+			<div class="property-result-wrapper">
+				<figure class="property-photo"><span><%= image_tag property.property_image.url(:full) %></span></figure>
+				<div class="property-detail">
+					<h4>$<%= property.payment %>/mo</h4>
+					<span><%= property.address %></span><br />
+					<span><%= "#{property.beds} beds, #{property.baths} baths" %></span>
+				</div>
+			</div>
+		</div>
+		<% end %>
+
+		<% if @properties.blank? %>
+			<div class="no-results">
+				<div class="property-result-wrapper">
+					<figure class="property-photo"><span><%= image_tag 'no-property-result.jpg' %></span></figure>
+					<h4>No results found</h4>
+					<span>Try a new search...</span><br />
+					<span>Or let someone help you look!</span>
+				</div>
+			</div>
+
+
+			<div class="col-md-3">
+				<h4>Try a new search:</h4>
+				<%= simple_form_for @query, :url => '/queries', :method => :post do |f| %>
+				
+				  <%= f.error_notification %>
+
+				  <div class="form-inputs">
+				    <%= f.input :guest_id, :as => :hidden %>
+				    <%= f.input :payment, label: false, class: "payment-input" %>
+				    <%= f.input :area_id, collection: @areas, label: false, prompt: "Choose an Area" %>
+				  </div>
+
+				  <div class="form-actions">
+				    <%= f.button :submit, "Find Properties", class: "btn-amoeba" %>
+				  </div>
+				 <% end %>
+			</div>
+		<% end %>
+	</div>
+	</div>
+
+</div>
+
+<div class="row mar-top30">
+
+	<h1 class="text-center mar-top30">Want to Know What You'd Likely Pre-Qualify* for Today?</h1>
+	<h2 class="text-center mar-top15">(and get a list of homes currently for sale in your area in your price range?!)</h2>
+	<div class="col-md-6 col-md-offset-3 mar-top20"><span class="asterisk-lg">*</span>FRED WILL PROVIDE THIS TEXT. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec 
+sagittis laoreet ipsum ut faucibus. Etiam id erat nec ipsum varius facilisis. Morbi eget enim orci, 
+eu aliquam metus. Curabitur cursus, ligula eu sollicitudin accumsan.</div>
+</div>
+
+<div class="row mar-top70">
+	<div class="request-form-left">
+		<div class="request-form-checkmarks">
+			<%= image_tag "check-mark.jpg" %>
+			<div class="req-form-checkmarks-text">Get your Pre-Qualification Number in 30 Seconds!</div>
+		</div>
+		<div class="request-form-checkmarks">
+			<%= image_tag "check-mark.jpg" %>
+			<div class="req-form-checkmarks-text">Learn About All Your Loan Options! <span class="small">(including zero down loans!)</span></div>
+		</div>
+		<div class="request-form-checkmarks">
+			<%= image_tag "check-mark.jpg" %>
+			<div class="req-form-checkmarks-text">Get your Pre-Qualification Letter sent to your Inbox!</div>
+		</div>
+	</div>
+
+	<div class="request-form-right request-info">
+		<%= render 'layouts/messages' %>
+		<%= simple_form_for @guest do |g| %>
+			<%= g.input :want_list, label: "YES! I would like a list of homes in my price range!" %>
+			<%= g.input_field :beds, label: false, placeholder: "No. of beds", class: "beds-field" %>
+			<%= g.input_field :baths, label: false, placeholder: "No. of baths", class: "baths-field" %>
+			<%= g.input_field :sqft, label: false, placeholder: "Min. Sq Ft", class: "sqft-field" %>
+			<%= g.input :areas, label: false, placeholder: "Areas of town you are interested in" %>
+			<div class="prequalify-checkbox">
+				<%= g.input :preapproval, label: "YES, I WANT TO KNOW WHAT I PREQUALIFY FOR!", class: "prequalify-checkbox" %>
+			</div>
+		<% # end %>
+	</div>
+	
+</div>
+
+<div class="row mar-top100 mar-bot50 align-center request-info-submit">
+		<%= g.input_field :email, label: false, placeholder: "Your Best Email Address (required)", required: true, class: "email-field" %>
+		<div class="form-actions">
+		    <%= g.button :submit, "NEXT >>", class: "btn-rbsubmit" %>
+		</div>
+	<% end %>
+</div>
+

@@ -1,0 +1,64 @@
+<h1 class="text-center mar-top40">Get pre-approved!</h1>
+<p class="text-center col-sm-6 col-sm-offset-3 mar-top10">Do we want some text here? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec 
+sagittis laoreet ipsum ut faucibus. Etiam id erat nec ipsum varius facilisis. Morbi eget enim orci, 
+eu aliquam metus. Curabitur cursus, ligula eu sollicitudin accumsan.</p>
+
+
+<div class="row front-page-search-box mar-top130">
+	<%= simple_form_for @prequal do |f| %>
+
+	  <%= f.error_notification %>
+
+	  	<div class="row">
+	  		<div class="col-sm-4 col-sm-offset-2
+	  					col-xs-12 col-xs-offset-0">
+	  			<h1 class="prequalify-field">
+		  			Yearly Income 
+		  			<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Your yearly income is what you make after taxes. Your lender will use this number to determine how much you can afford.">
+		  				<i class="fa fa-question-circle"></i>
+		  			</span>
+	  			</h1>
+	  		</div>
+	  		<div class="col-sm-4 col-sm-offset-0
+	  					col-xs-6 col-xs-offset-3">
+		  		<%= f.input_field :income, label: false %>
+		  	</div>
+		</div>
+
+		<div class="row">
+	  		<div class="col-sm-4 col-sm-offset-2
+	  					col-xs-12 col-xs-offset-0">
+	  			<h1 class="prequalify-field">
+	  				Monthly Debt 
+	  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Include all debts with regular periodic payments such as car payments, student loans, minimum Credit Card Payments, Child Support Payments. Do NOT include any monthly rent or mortgage you are currently paying, Credit Card Payments you pay off every month.">
+	  					<i class="fa fa-question-circle"></i>
+	  				</span>
+	  			</h1>
+	  		</div>
+	  		<div class="col-sm-4 col-sm-offset-0
+	  					col-xs-6 col-xs-offset-3">
+		  		<%= f.input_field :debt, label: false %>
+		  	</div>
+		</div>
+
+		<div class="row">
+	  		<div class="col-sm-4 col-sm-offset-2
+	  					col-xs-12 col-xs-offset-0">
+	  			<h1 class="prequalify-field">
+	  				Down Payment
+	  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Your down payment directly effects how much you can afford! If you increase your down payment, you may be able to qualify for a larger loan.">
+	  					<i class="fa fa-question-circle"></i>
+	  				</span>
+	  			</h1>
+	  		</div>
+	  		<div class="col-sm-4 col-sm-offset-0
+	  					col-xs-6 col-xs-offset-3">
+		  		<%= f.input_field :down_payment, label: false %>
+		  	</div>
+		</div>
+
+	  <div class="form-actions mar-top50 text-center">
+	    <%= f.button :submit, "Next >>", class: "btn-rbsubmit" %>
+	  </div>
+	<% end %>
+</div>

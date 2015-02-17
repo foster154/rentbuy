@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guest_id: 1
+  income: 1
+  debt: 1
+  down_payment: 1
+
+two:
+  guest_id: 1
+  income: 1
+  debt: 1
+  down_payment: 1

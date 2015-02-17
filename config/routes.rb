@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :queries
 
   resources :guests
-
-  resources :properties, except: :show
+  resources :queries
+  resources :prequals
 
   resources :areas
+  resources :properties, except: :show
 
   root to: 'guests#new'
   devise_for :users

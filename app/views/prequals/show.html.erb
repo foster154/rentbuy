@@ -1,0 +1,35 @@
+<h1 class="text-center mar-top40 congrats">Congratuations!</h1>
+<div class="col-sm-10 col-sm-offset-1 mar-top30">
+	<iframe width="420" height="236" src="https://www.youtube.com/embed/v0nIZ64fsaM?autoplay=1" frameborder="0" allowfullscreen style="float:right;" class="mar-bot3o"></iframe>
+	<p>Based on the information already collected, <br /> you are pre-qualified for a home purchase of:</p>
+
+	<% preapproved(@prequal.income, @prequal.debt, @prequal.down_payment) %>
+	<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
+
+	<p>That’s a monthly payment of <%= number_to_currency($max_monthly_payment, precision: 0) %>!</p>
+	<br />
+	<p><em>You should have received an email with your letter, check your inbox!</em></p>
+
+	<h3 class="mar-top50">FAQ</h3>
+	<p><strong>Q: Do I need a Pre-Approval? And what’s the difference from a Pre-Qualification?</strong></p>
+
+	<p>A: YES! If you are ready to start home shopping you should absolutely get a pre-approval letter. Only a Loan Officer can give you a pre-approval. Your pre-qualification is great first step in understanding where you stand as you begin to look.</p>
+
+	<p><strong>Q: Are there any zero down loan options out there for me?</strong></p>
+
+	<p>A: YES! 0% Down options are commonly available to many borrowers through financing programs like Idaho Housing and Finance Administration (IHFA), the Veteran Affairs (VA) and Boise Neighborhood Housing (NHS). Your loan officer will be delivering information to see if you qualify for 1 of the many programs.</p>
+
+	<p><strong>Q: I heard my Credit Score really impacts my ability to get a loan, is this true?</strong></p>
+
+	<p>A: YES! And your loan officer can get you your credit score when you begin the process of getting a pre-approval letter!! Credit scores, foreclosures and short sales can impact what you can qualify for, however, in many cases, they do not disqualify you from purchasing a home. Your loan officer will verify that you do in fact meet todays guidelines or let you know a date when you will.</p>
+
+	<h1 class="mar-top30 align-center">You are less than 10 minutes from getting pre-approved!</h1> 
+	<h3 class="align-center">It's so easy we can get it done with 1 phone call!</h3>
+
+	<%= simple_form_for @prequal do |f| %>
+
+	
+
+	<% end %>
+
+</div>

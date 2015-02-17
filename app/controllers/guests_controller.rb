@@ -12,7 +12,6 @@ class GuestsController < ApplicationController
     @query = @guest.queries.last
     @areas = Area.all
     find_properties
-    render layout: 'application-front'
   end
 
   def new
@@ -26,7 +25,6 @@ class GuestsController < ApplicationController
     @query = @guest.queries.last
     @areas = Area.all
     find_properties
-    render layout: 'application-front'
   end
 
   def create
@@ -37,10 +35,12 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update(guest_params)
-    if @guest.email
+    if @guest.email.present? && @guest.preapproval.present?
       GuestMailer.request_form_submission(@guest).deliver
-    end
+      redirect_to new_prequal_path(guest_id: @guest.id)
+    else
     redirect_to results_path(id: @guest.id)
+    end
   end
 
   def destroy
@@ -55,12 +55,13 @@ class GuestsController < ApplicationController
 
     def guest_params
       params.require(:guest).permit(:name, 
-                                    :email, 
+                                    :email,
+                                    :want_list, 
                                     :beds, 
                                     :baths, 
+                                    :sqft,
                                     :areas, 
-                                    :foreclosures,
-                                    :short_sales,
+                                    :preapproval,
                                     queries_attributes: [:guest_id, :area_id, :payment])
     end
 
