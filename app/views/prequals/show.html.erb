@@ -1,12 +1,30 @@
 <h1 class="text-center mar-top40 congrats">Congratuations!</h1>
 <div class="col-sm-10 col-sm-offset-1 mar-top30">
-	<iframe width="420" height="236" src="https://www.youtube.com/embed/v0nIZ64fsaM?autoplay=1" frameborder="0" allowfullscreen style="float:right;" class="mar-bot3o"></iframe>
-	<p>Based on the information already collected, <br /> you are pre-qualified for a home purchase of:</p>
+	<div class="lender-area">
+		<div class="lender-video">
+			<iframe width="420" height="236" src="https://www.youtube.com/embed/eDd_TAoWzP0?autoplay=1" frameborder="0" allowfullscreen style="float:right;" class="mar-bot30"></iframe>
+		</div>
+		<div class="lender-contact">
+			<%= image_tag 'dave-woodland-lender.jpg', class: 'lender-pic' %>
+			<div class="lender-info">
+				<div class="mar-top10"><strong>Dave Woodland</strong></div>
+				<div>Signet Mortgage</div>
+				<div>NMLS ID: 97w3497w394</div>
+				<div>Phone: 876-543-2323</div>
+			</div>
+		</div>
+	</div> <!-- /.lender-info -->
+
+	<p>Based on the information already collected, <br /> you could be pre-qualified for a home purchase of:</p>
 
 	<% preapproved(@prequal.income, @prequal.debt, @prequal.down_payment) %>
 	<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
 
-	<p>That’s a monthly payment of <%= number_to_currency($max_monthly_payment, precision: 0) %>!</p>
+	<p>A 5% down payment has been assumed.</p>
+	<p style="max-width: 500px;">Don’t have 5% to put down? No problem! 0 down options are available!
+	Have more than 5%, great! This can increase your purchase price 
+	OR lower your monthly payment!</p>
+
 	<br />
 	<p><em>You should have received an email with your letter, check your inbox!</em></p>
 
