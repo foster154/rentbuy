@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211044754) do
+ActiveRecord::Schema.define(version: 20150219034935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,8 +47,11 @@ ActiveRecord::Schema.define(version: 20150211044754) do
     t.boolean  "self_employed"
     t.boolean  "first_time_buyer"
     t.boolean  "military"
-    t.boolean  "contact_now"
-    t.datetime "contact_time"
+    t.boolean  "yes_call"
+    t.boolean  "yes_email"
+    t.string   "prequal_phone"
+    t.string   "prequal_email"
+    t.datetime "call_time"
   end
 
   create_table "properties", force: true do |t|

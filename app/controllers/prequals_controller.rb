@@ -10,6 +10,7 @@ class PrequalsController < ApplicationController
   end
 
   def show
+    @guest = @prequal.guest
     respond_with(@prequal)
   end
 
@@ -52,6 +53,11 @@ class PrequalsController < ApplicationController
                                       :down_payment, 
                                       :self_employed, 
                                       :first_time_buyer, 
-                                      :military)
+                                      :military,
+                                      :yes_call,
+                                      :yes_email,
+                                      :prequal_phone,
+                                      :prequal_email,
+                                      :call_time)
     end
 end

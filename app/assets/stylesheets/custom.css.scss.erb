@@ -675,17 +675,100 @@ h1.congrats {
 	border: 1px solid $ltgray;
 	border-radius: 5px;
 	padding: 10px;
+}
+
+.lender-contact {
+	clear: both;
+}
+.lender-pic {
+	float: left;
+	margin: 0 40px;
+	border-radius: 50%;
+	height: 110px;
+}
+.lender-info {
+	margin-top: 30px;
+}
+
+// .radio, .checkbox {
+// 	display: inline !important;
+// }
+
+.prequal-contact-box {
+	margin-bottom: 20px;
+	border: 1px solid $ltgray;
+	border-radius: 5px;
+	padding: 10px 10px 10px 10px;
+	.checkbox input[type="checkbox"] {
+		margin-top: 6px;
+	}
+	.prequal_yes_call,
+	.prequal_yes_email {
+		margin: 0 0 0 30px;
+	}
+	.contact-field,
+	#prequal_prequal_email {
+		width: 300px;
+		border: 3px solid #ccc;
+		border-radius: 3px;
+		padding: 3px;
+		margin: 20px auto;
+		display: block;
+		text-align: center;
+		@media (max-width: 1020px) {
+			width: 200px;
+		}
+		@media (max-width: 767px) {
+			width: 300px;
+		}
+	}
+	.btn-rbsubmit {
+		display: block;
+		margin: 20px auto;
+	}
+}
+
+.call-emphasize {
+	border: 2px solid $dkblue;
+}
+
+.faster-callout {
+	float:right;
+	margin: -44px -44px 0 0;
+	background-color: $ltgreen;
+	border: 2px solid $dkgreen;
+	border-radius: 50%;
+	height: 80px;
+	width: 80px;
+	text-align: center;
+	padding-top: 25px;
+	color: white;
+	font-weight: 500;
+}
+
+.prequal-or {
+	text-align: center;
+	font-size: 24px;
+	margin: 20px 0;
+}
+
+.prequal-contact-thank-you {
+	margin-top: 40px;
+	padding: 50px 30px;
+	text-align: center;
+	background-color: $ltblue;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	color: white;
+	font-size: 28px;
 	.lender-contact {
-		clear: both;
-	}
-	.lender-pic {
-		float: left;
-		margin: 0 40px;
-		border-radius: 50%;
-		height: 110px;
-	}
-	.lender-info {
-		margin-top: 30px;
+		clear: both; 
+		display: block;
+		width: 50%;
+		min-width: 300px;
+		margin: 30px auto 0 auto;
+		color: $dkgray;
+		font-size: 18px;
 	}
 }
 
