@@ -68,7 +68,7 @@
 		<div class="row mar-top60">
 			<%= simple_form_for @prequal do |f| %>
 				<%= f.error_notification %>
-			 	<div class="col-sm-5">
+			 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
 			 		<div class="prequal-contact-box call-emphasize">
 			 			<div class="faster-callout">Faster!</div>
 			 			<%= f.input :yes_call, as: :boolean, inline_label: "YES! Please call me to discuss my mortgage options!", label: false %>
@@ -79,10 +79,10 @@
 						</div>
 			 		</div>
 			 	</div>
-			 	<div class="col-sm-2">
-			 	<div class="prequal-or">or...</div>
+			 	<div class="col-sm-2 col-xs-12">
+			 		<div class="prequal-or">or...</div>
 			 	</div>
-			 	<div class="col-sm-5">
+			 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
 			 		<div class="prequal-contact-box">
 			 			<%= f.input :yes_email, as: :boolean, label: false, inline_label: "I'd like to continue the conversation over email" %>
 			 			<%= f.input :prequal_email, label: false, input_html: { :value => @guest.email }, class: "contact-field" %>
