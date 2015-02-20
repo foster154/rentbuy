@@ -32,6 +32,10 @@ class PrequalsController < ApplicationController
 
   def update
     @prequal.update(prequal_params)
+    if @prequal.yes_call.present? || @prequal.yes_email.present?
+      PrequalMailer.prequal_submission_to_guest(@prequal).deliver
+      PrequalMailer.prequal_submission_to_agent_lender(@prequal).deliver
+    end
     respond_with(@prequal)
   end
 
