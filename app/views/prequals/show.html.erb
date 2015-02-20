@@ -28,6 +28,62 @@
 	<br />
 	<p><em>You should have received an email with your letter, check your inbox!</em></p>
 
+	<div class="clear-both">
+	<% if @prequal.prequal_phone.present? || @prequal.prequal_email.present? %>
+			<div class="prequal-contact-thank-you">
+				<% if @prequal.yes_call.present? %>
+					Thank you! Your lender will reach out to you by phone at the requested time!
+					<% elsif @prequal.yes_email.present? %>
+					Thank you! Your lender will reach out to you by email soon!
+					<% else %>
+					Thank you! Your lender will reach out to you soon!
+				<% end %>
+				<div class="mar-top20 mar-bot20">Or give him a call at your convenience:</div>
+				<div class="lender-contact">
+					<%= image_tag 'dave-woodland-lender.jpg', class: 'lender-pic' %>
+					<div class="lender-info">
+						<div class="mar-top10"><strong>Dave Woodland</strong></div>
+						<div>Signet Mortgage</div>
+						<div>NMLS ID: 97w3497w394</div>
+						<div>Phone: 876-543-2323</div>
+					</div>
+				</div>
+			</div>
+		<% else %> 
+		<h1 class="mar-top30 align-center">You are less than 10 minutes from getting pre-approved!</h1> 
+		<h3 class="align-center">It's so easy we can get it done with 1 phone call!</h3>
+
+			<div class="row mar-top60">
+				<%= simple_form_for @prequal do |f| %>
+					<%= f.error_notification %>
+				 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+				 		<div class="prequal-contact-box call-emphasize">
+				 			<div class="faster-callout">Faster!</div>
+				 			<%= f.input :yes_call, as: :boolean, inline_label: "YES! Please call me to discuss my mortgage options!", label: false %>
+				 			<%= f.input_field :prequal_phone, label: false, placeholder: "Your Best Phone Number", class: "contact-field" %>
+				 			<%= f.input_field :call_time, label: false, placeholder: "Best Time to Call", class: "contact-field" %>
+				 			<div class="form-actions">
+							    <%= f.button :submit, "Submit", class: "btn-rbsubmit" %>
+							</div>
+				 		</div>
+				 	</div>
+				 	<div class="col-sm-2 col-xs-12">
+				 		<div class="prequal-or">or...</div>
+				 	</div>
+				 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+				 		<div class="prequal-contact-box">
+				 			<%= f.input :yes_email, as: :boolean, label: false, inline_label: "I'd like to continue the conversation over email" %>
+				 			<%= f.input :prequal_email, label: false, input_html: { :value => @guest.email }, class: "contact-field" %>
+				 			<div class="form-actions">
+							    <%= f.button :submit, "Submit", class: "btn-rbsubmit" %>
+							</div>
+				 		</div>
+				 	</div>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+
 	<h3 class="mar-top50">FAQ</h3>
 	<p><strong>Q: Do I need a Pre-Approval? And what’s the difference from a Pre-Qualification?</strong></p>
 
@@ -40,59 +96,4 @@
 	<p><strong>Q: I heard my Credit Score really impacts my ability to get a loan, is this true?</strong></p>
 
 	<p>A: YES! And your loan officer can get you your credit score when you begin the process of getting a pre-approval letter!! Credit scores, foreclosures and short sales can impact what you can qualify for, however, in many cases, they do not disqualify you from purchasing a home. Your loan officer will verify that you do in fact meet todays guidelines or let you know a date when you will.</p>
-
-	<% if @prequal.prequal_phone.present? || @prequal.prequal_email.present? %>
-		<div class="prequal-contact-thank-you">
-			<% if @prequal.yes_call.present? %>
-				Thank you! Your lender will reach out to you by phone at the requested time!
-				<% elsif @prequal.yes_email.present? %>
-				Thank you! Your lender will reach out to you by email soon!
-				<% else %>
-				Thank you! Your lender will reach out to you soon!
-			<% end %>
-			<div class="mar-top20 mar-bot20">Or give him a call at your convenience:</div>
-			<div class="lender-contact">
-				<%= image_tag 'dave-woodland-lender.jpg', class: 'lender-pic' %>
-				<div class="lender-info">
-					<div class="mar-top10"><strong>Dave Woodland</strong></div>
-					<div>Signet Mortgage</div>
-					<div>NMLS ID: 97w3497w394</div>
-					<div>Phone: 876-543-2323</div>
-				</div>
-			</div>
-		</div>
-	<% else %> 
-	<h1 class="mar-top30 align-center">You are less than 10 minutes from getting pre-approved!</h1> 
-	<h3 class="align-center">It's so easy we can get it done with 1 phone call!</h3>
-
-		<div class="row mar-top60">
-			<%= simple_form_for @prequal do |f| %>
-				<%= f.error_notification %>
-			 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-			 		<div class="prequal-contact-box call-emphasize">
-			 			<div class="faster-callout">Faster!</div>
-			 			<%= f.input :yes_call, as: :boolean, inline_label: "YES! Please call me to discuss my mortgage options!", label: false %>
-			 			<%= f.input_field :prequal_phone, label: false, placeholder: "Your Best Phone Number", class: "contact-field" %>
-			 			<%# f.input :call_time %>
-			 			<div class="form-actions">
-						    <%= f.button :submit, "Submit", class: "btn-rbsubmit" %>
-						</div>
-			 		</div>
-			 	</div>
-			 	<div class="col-sm-2 col-xs-12">
-			 		<div class="prequal-or">or...</div>
-			 	</div>
-			 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-			 		<div class="prequal-contact-box">
-			 			<%= f.input :yes_email, as: :boolean, label: false, inline_label: "I'd like to continue the conversation over email" %>
-			 			<%= f.input :prequal_email, label: false, input_html: { :value => @guest.email }, class: "contact-field" %>
-			 			<div class="form-actions">
-						    <%= f.button :submit, "Submit", class: "btn-rbsubmit" %>
-						</div>
-			 		</div>
-			 	</div>
-			<% end %>
-		</div>
-	<% end %>
-
 </div>
