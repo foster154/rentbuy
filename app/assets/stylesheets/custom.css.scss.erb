@@ -332,6 +332,11 @@ section#footer .copyright {
     color: $dkgray;
 }
 
+// Fix positioning of checkboxes
+.checkbox input[type="checkbox"] {
+	margin-top: 6px;
+}
+
 // ==========================================
 // Guests#new
 // ==========================================
@@ -457,33 +462,6 @@ div.results {
 	color: black;
 }
 
-span.asterisk-lg {
-	font-size: 28px;  
-	font-weight:300; 
-	color: $ltblue;
-}
-
-.request-form-checkmarks {
-	clear: both;
-	margin-bottom: 40px;
-	img {
-		float: left;
-		width: 80px;
-		margin-right: 20px;
-	}
-	.req-form-checkmarks-text {
-		font-size: 28px;  
-		font-weight:300; 
-		color: $ltblue;
-		line-height: 1.1;
-		margin-left: 20px;
-		span {
-			font-size: 14px; 
-		}
-	}
-}
-
-
 #query_payment {
 	
 	width: 90px;
@@ -495,15 +473,59 @@ span.asterisk-lg {
   	}
 }
 
+span.asterisk-lg {
+	font-size: 28px;  
+	font-weight:300; 
+	color: $ltblue;
+}
+
+.request-form-checkmarks {
+	clear: both;
+	margin-bottom: 40px;
+	img {
+		float: left;
+		width: 60px;
+		margin-right: 20px;
+		@media screen and (max-width: 510px) {
+			margin: 25px 20px 40px 0;
+		}
+	}
+	.req-form-checkmarks-text {
+		font-size: 28px;  
+		font-weight:300; 
+		color: $ltblue;
+		line-height: 1.1;
+		margin-left: 20px;
+		@media screen and (max-width: 1101px) {
+			padding-top: 10px;
+
+		}
+		span {
+			font-size: 14px; 
+		}
+	}
+}
+
 .request-form-left {
+	display: block;
 	width: 40%;
 	float: left;
 	margin-left: 100px;
+	@media screen and (max-width: 1101px) {
+		float: none;
+		width: 80%;
+		margin: 0 auto 70px auto;
+	}
 }
 .request-form-right {
-	width: 40%;
+	//width: 40%;
 	float: right;
 	margin-right: 100px;
+	@media screen and (max-width: 1101px) {
+		clear: both;
+		float: none;
+		margin: 40px auto 20px auto;
+	}
 }
 
 .request-info {
@@ -511,29 +533,30 @@ span.asterisk-lg {
 	padding: 10px 5px 10px 40px;
 	border-radius: 4px;
 	width: 470px;
+	@media screen and (max-width: 500px) {
+		width: 90%;
+	}
 	// Spacing between form elements
 	.control-group {
 	 	margin: 15px 0;
 	}
-	// Fix positioning of checkboxes on guests#show page
-	.checkbox input[type="checkbox"] {
-		margin-top: -34px;
-	}
-	// .form-header {
-	// 	margin-top: 30px;
-	// 	font-weight:500;
-	// 	margin-left: -20px;
-	// 	font-size: 22px;
-	// }
 	.beds-field,
 	.baths-field,
 	.sqft-field {
 		width: 134px;
 		border: 3px solid #ccc;
+		@media screen and (max-width: 500px) {
+			display: block;
+			clear: both;
+			margin: 5px auto 0 auto;
+		}
 	}
 	.baths-field,
 	.sqft-field {
 		margin-left: 8px;
+		@media screen and (max-width: 500px) {
+			margin: 5px auto 0 auto;
+		}
 	}
 	input, textarea {
 		border-radius: 3px;
@@ -541,6 +564,10 @@ span.asterisk-lg {
 		padding: 5px;
 		margin-left: -20px;
 		width: 427px;
+		@media screen and (max-width: 500px) {
+			margin: 5px auto 0 auto;
+			width: 290px;
+		}
 	}
 	.prequalify-checkbox {
 		margin: 5px 5px 5px -20px;
@@ -550,26 +577,38 @@ span.asterisk-lg {
 		max-width: 427px;
 		border-radius: 6px;
 		color: white;
-		font-weight: 300;
-			.control-label {
+		#guest_preapproval {
+			label {
 				font-weight: 300;
 			}
-
+		}
 	}
 }
 
 .request-info-submit {
-	width: 60%;
+	width: 450px;
 	margin: 55px auto 100px auto;
+	@media screen and (max-width: 480px) {
+		width: 380px;
+	}
 	.email-field {
 		width: 300px;
 		border: 3px solid #ccc;
 		border-radius: 4px;
 		padding: 10px;
+		float: left;
+		@media screen and (max-width: 480px) {
+			float: none;
+			margin: 0 auto;
+		}
 	}
 	.btn-rbsubmit {
 		float: right;
-		margin: -52px 130px 0 0;
+		@media screen and (max-width: 480px) {
+			clear: both;
+			float: none;
+			margin: 10px auto;
+		}
 	}
 }
 
@@ -607,6 +646,7 @@ section.thank-you {
 }
 
 .thank-you-video {
+	margin-top: 30px;
 }
 
 
@@ -621,14 +661,7 @@ section.thank-you {
 	text-align:right;
 	color:$ltblue;
 	white-space: nowrap;
-	@media screen and (max-width: 1200px) {
-		margin-left: -40px;
-	}
-	@media screen and (max-width: 990px) {
-		margin-left: 80px;
-	}
 	@media screen and (max-width: 767px) {
-		margin-left: 0;
 		text-align: center;
 	}
 	i {
@@ -638,21 +671,37 @@ section.thank-you {
 	}
 }
 
+.prequal-form {
+	margin-top: 50px;
+	input {
+		font-size: 18px;
+		padding: 12px;
+		border-radius: 3px;
+		border: 1px solid $ltblue;
+		display: inline-block;
+		@media screen and (max-width: 767px) {
+			margin: 0 auto;
+			display: block;
+			margin-bottom: 30px;
+		}
+	}
+}
+
 .prequalify2-field {
 	margin-top: 10px;
 	text-align:center;
 	color:$ltblue;
-	white-space: nowrap;
-	@media screen and (max-width: 1200px) {
-		margin-left: -40px;
-	}
-	@media screen and (max-width: 990px) {
-		margin-left: 80px;
-	}
-	@media screen and (max-width: 767px) {
-		margin-left: 0;
-		text-align: center;
-	}
+	//white-space: nowrap;
+	// @media screen and (max-width: 1200px) {
+	// 	margin-left: -40px;
+	// }
+	// @media screen and (max-width: 990px) {
+	// 	margin-left: 80px;
+	// }
+	// @media screen and (max-width: 767px) {
+	// 	margin-left: 0;
+	// 	text-align: center;
+	// }
 	i {
 		font-size: 24px;
 		padding-left: 5px;

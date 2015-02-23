@@ -8,39 +8,45 @@
 	  <%= f.error_notification %>
 
 	  	<div class="row">
-  			<h1 class="prequalify2-field align-center">
-	  			Are you self-employed?
-	  			<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Loans for self-employed borrowers typically require more documentation for items like your income and assets.">
-	  				<i class="fa fa-question-circle"></i>
-	  			</span>
-  			</h1>
+	  		<div class="col-xs-10 col-xs-offset-1">
+	  			<h1 class="prequalify2-field align-center">
+		  			Are you self-employed?
+		  			<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Loans for self-employed borrowers typically require more documentation for items like your income and assets.">
+		  				<i class="fa fa-question-circle"></i>
+		  			</span>
+	  			</h1>
+  			</div>
 	  	</div>
   		<div class="row">
-	  		<%= f.input :self_employed, as: :radio_buttons, label: false %>
+	  		<%= f.input :self_employed, as: :radio_buttons, checked: false, label: false %>
 	  	</div>
 
 		<div class="row">
-  			<h1 class="prequalify2-field">
-  				Are you a first-time Home Buyer? 
-  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="There are special loans for first time home buyers and you may even qualify for a zero down, or very low down payment loan.">
-  					<i class="fa fa-question-circle"></i>
-  				</span>
-  			</h1>
+			<div class="col-xs-10 col-xs-offset-1">
+	  			<h1 class="prequalify2-field">
+	  				Are you a first-time Home Buyer? 
+	  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="There are special loans for first time home buyers and you may even qualify for a zero down, or very low down payment loan.">
+	  					<i class="fa fa-question-circle"></i>
+	  				</span>
+	  			</h1>
+	  		</div>
 	  	</div>
   		<div class="row align-center">
-	  		<%= f.input :first_time_buyer, as: :radio_buttons, label: false %>
+	  		<%= f.input :first_time_buyer, as: :radio_buttons, checked: true, label: false %>
 	  	</div>
 
 		<div class="row">
-  			<h1 class="prequalify2-field">
-  				Have you served in the active military?
-  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Veterans can earn a special zero down loan and you may qualify if you served in the active military!">
-  					<i class="fa fa-question-circle"></i>
-  				</span>
-  			</h1>
+			<div class="col-xs-10 col-xs-offset-1">
+	  			<h1 class="prequalify2-field">
+	  				Have you served in the active military?
+	  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Veterans can earn a special zero down loan and you may qualify if you served in the active military!">
+	  					<i class="fa fa-question-circle"></i>
+	  				</span>
+	  			</h1>
+	  		</div>
 	  	</div>
   		<div class="row">
-	  		<%= f.input :military, as: :radio_buttons, label: false %>
+	  		<%= f.input :military, as: :radio_buttons, checked: false, label: false %>
 	  	</div>
 
 	  <div class="form-actions mar-top50 text-center">

@@ -36,7 +36,6 @@ class GuestsController < ApplicationController
   def update
     @guest.update(guest_params)
     if @guest.email.present? && @guest.preapproval.present?
-      GuestMailer.request_form_submission(@guest).deliver
       redirect_to new_prequal_path(guest_id: @guest.id)
     else
     redirect_to results_path(id: @guest.id)

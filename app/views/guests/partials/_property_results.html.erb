@@ -1,12 +1,14 @@
 <div class="results container-fluid">
 	<div class="row">
-		<% if @properties.size > 1 %>
-			<h1 class="align-center mar-top50">Check out the monthly mortgages on these homes!</h1>
-		<% elsif @properties.size == 1 %>
-			<h1 class="align-center mar-top50">Check out the monthly mortgage on this home!</h1>
-		<% elsif @properties.size == 0 %>
-			<h1 class="align-center mar-top50">No results found... Want to search again?</h1>
-		<% end %>
+		<div class="col-xs-10 col-xs-offset-1">
+			<% if @properties.size > 1 %>
+				<h1 class="align-center mar-top50">Check out the monthly mortgages on these homes!</h1>
+			<% elsif @properties.size == 1 %>
+				<h1 class="align-center mar-top50">Check out the monthly mortgage on this home!</h1>
+			<% elsif @properties.size == 0 %>
+				<h1 class="align-center mar-top50">No results found... Want to search again?</h1>
+			<% end %>
+		</div>
 	</div>
 
 	<div class="container">
@@ -40,7 +42,7 @@
 						<figure class="property-photo"><span><%= image_tag 'no-property-result.jpg' %></span></figure>
 						<h4>No results found</h4>
 						<span>Try a new search...</span><br />
-						<span>Or let someone help you look!</span>
+						<span>Or let us help you look!</span>
 					</div>
 					<div class="col-right">
 						<h4>Try a new search:</h4>
@@ -67,12 +69,13 @@
 </div>
 
 <div class="row mar-top30">
-
-	<h1 class="text-center mar-top30">Want to Know What You'd Likely Pre-Qualify* for Today?</h1>
-	<h2 class="text-center mar-top15">(and get a list of homes currently for sale in your area in your price range?!)</h2>
-	<div class="col-md-6 col-md-offset-3 mar-top20"><span class="asterisk-lg">*</span>FRED WILL PROVIDE THIS TEXT. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec 
-sagittis laoreet ipsum ut faucibus. Etiam id erat nec ipsum varius facilisis. Morbi eget enim orci, 
-eu aliquam metus. Curabitur cursus, ligula eu sollicitudin accumsan.</div>
+	<div class="col-xs-10 col-xs-offset-1">
+		<h1 class="text-center mar-top30">Want to Know What You'd Likely Pre-Qualify* for Today?</h1>
+		<h2 class="text-center mar-top15">(and get a list of homes currently for sale in your area in your price range?!)</h2>
+		<div class="col-md-6 col-md-offset-3 mar-top20"><span class="asterisk-lg">*</span>FRED WILL PROVIDE THIS TEXT. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec 
+	sagittis laoreet ipsum ut faucibus. Etiam id erat nec ipsum varius facilisis. Morbi eget enim orci, 
+	eu aliquam metus. Curabitur cursus, ligula eu sollicitudin accumsan.</div>
+	</div>
 </div>
 
 <div class="row mar-top70">
@@ -94,13 +97,13 @@ eu aliquam metus. Curabitur cursus, ligula eu sollicitudin accumsan.</div>
 	<div class="request-form-right request-info">
 		<%= render 'layouts/messages' %>
 		<%= simple_form_for @guest do |g| %>
-			<%= g.input :want_list, as: :boolean, label: "YES! I would like a list of homes in my price range!" %>
+			<%= g.input :want_list, as: :boolean, label: false, inline_label: "YES! I would like a list of homes in my price range!" %>
 			<%= g.input_field :beds, label: false, placeholder: "No. of beds", class: "beds-field" %>
 			<%= g.input_field :baths, label: false, placeholder: "No. of baths", class: "baths-field" %>
 			<%= g.input_field :sqft, label: false, placeholder: "Min. Sq Ft", class: "sqft-field" %>
 			<%= g.input :areas, label: false, placeholder: "Areas of town you are interested in" %>
 			<div class="prequalify-checkbox">
-				<%= g.input :preapproval, as: :boolean, label: "YES, I WANT TO KNOW WHAT I PREQUALIFY FOR!", class: "prequalify-checkbox" %>
+				<%= g.input :preapproval, as: :boolean, label: false, inline_label: "YES, I WANT TO KNOW WHAT I PREQUALIFY FOR!", class: "prequalify-checkbox" %>
 			</div>
 		<% # end %>
 	</div>
