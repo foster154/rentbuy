@@ -18,15 +18,15 @@
 	<p>Based on the information already collected, <br /> you could be pre-qualified for a home purchase of:</p>
 
 	<% preapproved(@prequal.income, @prequal.debt, @prequal.down_payment) %>
-	<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
 
-	<p>A 5% down payment has been assumed.</p>
-	<p style="max-width: 500px;">Don’t have 5% to put down? No problem! 0 down options are available!
-	Have more than 5%, great! This can increase your purchase price 
-	OR lower your monthly payment!</p>
+	<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
 
-	<br />
-	<p><em>After completing the form below, check your inbox!</em></p>
+	<!-- <p>A 5% down payment has been assumed.</p> -->
+	<p style="max-width: 500px;">Based on your income you would qualify <strong><%= number_to_currency($can_afford_income, precision: 0) %></strong> if you could come up with 3.5% down or more.</p> 
+
+	<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>
+
+	<p>After completing the form below, check your inbox!</p>
 
 	<div class="clear-both">
 	<% if @prequal.prequal_phone.present? || @prequal.prequal_email.present? %>
