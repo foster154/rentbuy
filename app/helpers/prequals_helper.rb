@@ -10,6 +10,7 @@ module PrequalsHelper
 		$can_afford_income = (m * ((1 + r/12)**n - 1)) / ((r/12) * (1 + r/12)**n)
 		
 		$can_afford_down = down_payment * 20
+
 	end
 
 end
