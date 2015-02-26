@@ -15,18 +15,33 @@
 		</div>
 	</div> <!-- /.lender-info -->
 
-	<p>Based on the information already collected, <br /> you could be pre-qualified for a home purchase of:</p>
+	<div class="your-number-info">
+		<p>Based on the information already collected, <br /> you could be pre-qualified for a home purchase of:</p>
+		<% preapproved(@prequal.income, @prequal.debt, @prequal.down_payment) %>
 
-	<% preapproved(@prequal.income, @prequal.debt, @prequal.down_payment) %>
+		<% if @prequal.military %>
 
-	<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
+			<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
+			<p style="max-width: 500px;"><strong>First and foremost, thank you for your service.</strong> If you qualify for a VA loan, a downpayment will NOT be required. This one of the many great aspects of a VA loan! Talk to your matched lender for some of the other great features of a VA loan.</p>
+			<br>
 
-	<!-- <p>A 5% down payment has been assumed.</p> -->
-	<p style="max-width: 500px;">Based on your income you would qualify <strong><%= number_to_currency($can_afford_income, precision: 0) %></strong> if you could come up with 3.5% down or more.</p> 
+		<% elsif @prequal.income < 90001 && @prequal.down_payment < 5001 %>
 
-	<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>
+			<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
+			<p style="max-width: 500px;">We have calculated your estimated purchase price based on your monthly income only. Based on the information you have provided, you could qualify for a $0 down payment loan option!</p> 
+			<br>
+			<p><em>Talk with a lender about all of your loan options, including the possiblity of $0 down.</em></p>
+			<br>
 
-	<p>After completing the form below, check your inbox!</p>
+		<% else %>
+
+			<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
+			<p style="max-width: 500px;">Based on your income you would qualify <strong><%= number_to_currency($can_afford_income, precision: 0) %></strong> if you could come up with 3.5% down or more.</p> 
+			<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>
+
+		<% end %>
+
+	</div>
 
 	<div class="clear-both">
 	<% if @prequal.prequal_phone.present? || @prequal.prequal_email.present? %>
