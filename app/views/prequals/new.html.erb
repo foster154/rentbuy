@@ -8,21 +8,19 @@
 <div class="row prequal-form">
 	<%= simple_form_for @prequal do |f| %>
 
-	  <%= f.error_notification %>
-
-	  			<%= f.input :guest_id, :as => :hidden, :input_html => { :value => params[:guest_id] } %>
+	  	<%= f.input :guest_id, :as => :hidden, :input_html => { :value => params[:guest_id] } %>
 
 	  	<div class="row">
 	  		<div class="col-sm-6">
 	  			<h1 class="prequalify-field">
-		  			Yearly Income 
-		  			<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Your yearly income is what you make after taxes. Your lender will use this number to determine how much you can afford.">
+		  			Annual Income 
+		  			<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Your annual income is what you make before taxes. Your lender will use this number to determine how much you can afford.">
 		  				<i class="fa fa-question-circle"></i>
 		  			</span>
 	  			</h1>
 	  		</div>
 	  		<div class="col-sm-6">
-		  		<%= f.input_field :income, label: false %>
+		  		<%= f.text_field :income, label: false, data: { role: 'money'} %>
 		  	</div>
 		</div>
 
@@ -36,7 +34,7 @@
 	  			</h1>
 	  		</div>
 	  		<div class="col-sm-6">
-		  		<%= f.input_field :debt, label: false %>
+		  		<%= f.text_field :debt, label: false, data: { role: 'money'} %>
 		  	</div>
 		</div>
 
@@ -50,7 +48,7 @@
 	  			</h1>
 	  		</div>
 	  		<div class="col-sm-6">
-		  		<%= f.input_field :down_payment, label: false %>
+		  		<%= f.text_field :down_payment, label: false, data: { role: 'money'} %>
 		  	</div>
 		</div>
 

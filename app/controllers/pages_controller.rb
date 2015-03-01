@@ -11,4 +11,8 @@ class PagesController < ApplicationController
 		render layout: 'application-front'
 	end
 
+	def thank_you
+		render layout: 'application-front'
+	end
+
 end

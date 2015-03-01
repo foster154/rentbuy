@@ -34,11 +34,14 @@ class GuestsController < ApplicationController
   end
 
   def update
-    @guest.update(guest_params)
-    if @guest.email.present? && @guest.preapproval.present?
-      redirect_to new_prequal_path(guest_id: @guest.id)
+    if @guest.update(guest_params)
+      if @guest.preapproval.present?
+        redirect_to new_prequal_path(guest_id: @guest.id)
+      else
+        redirect_to results_path(id: @guest.id)
+      end
     else
-    redirect_to results_path(id: @guest.id)
+      redirect_to results_path(id: @guest.id)
     end
   end
 

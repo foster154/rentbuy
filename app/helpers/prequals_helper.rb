@@ -1,6 +1,10 @@
 module PrequalsHelper
 
 	def preapproved(income, debt, down_payment)
+		income = income.to_i
+		debt = debt.to_i
+		down_payment = down_payment.to_i
+
 		$max_monthly_payment = ((income / 12) - debt) * 0.4
 
 		m = $max_monthly_payment
@@ -14,7 +18,9 @@ module PrequalsHelper
 		$can_afford_income = $max_principle / 0.965 + (down_payment - $max_principle / 0.965 * 0.035)
 		$can_afford_down = down_payment / 0.035
 
-		if $check_down_payment >= 0
+		if (income.to_i / 12) - debt <= 0
+			$your_number = down_payment
+		elsif $check_down_payment >= 0
 			$your_number = $can_afford_income
 		else
 			$your_number = $can_afford_down

@@ -26,8 +26,11 @@ class PrequalsController < ApplicationController
 
   def create
     @prequal = Prequal.new(prequal_params)
-    @prequal.save
-    redirect_to edit_prequal_path(id: @prequal.id)
+    if @prequal.save
+      redirect_to edit_prequal_path(id: @prequal.id)
+    else
+      render :new
+    end
   end
 
   def update
@@ -47,7 +50,8 @@ class PrequalsController < ApplicationController
     end
 
     def prequal_params
-      params.require(:prequal).permit(:guest_id, 
+      params.require(:prequal).permit(:guest_id,
+                                      :name, 
                                       :income, 
                                       :debt, 
                                       :down_payment, 

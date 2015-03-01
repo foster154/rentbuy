@@ -6,7 +6,7 @@ class Guest < ActiveRecord::Base
 
 	after_save :deliver_request_info_to_agent, if: :email
 
-	# validates_presence_of :email, on: :update
+	validates_presence_of :email, on: :update
 
 	self.per_page = 20
 

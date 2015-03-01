@@ -27,7 +27,7 @@
 			<div class="property-result-wrapper">
 				<figure class="property-photo"><span><%= image_tag property.property_image.url(:full) %></span></figure>
 				<div class="property-detail">
-					<h4>$<%= property.payment %>/mo</h4>
+					<h4>$<%= property.payment %>/mo*</h4>
 					<span><%= property.address %></span><br />
 					<span><%= "#{property.beds} beds, #{property.baths} baths" %></span>
 				</div>
@@ -70,9 +70,8 @@
 
 <div class="row mar-top30">
 	<div class="col-xs-10 col-xs-offset-1">
-		<h1 class="text-center mar-top30">Want to Know What You'd Likely Pre-Qualify* for Today?</h1>
-		<h2 class="text-center mar-top15">(and get a list of homes currently for sale in your area in your price range?!)</h2>
-		<div class="col-md-8 col-md-offset-2 mar-top20 disclaimer"><span class="asterisk-lg">*</span>A mortgage pre-qualification is an estimate of how much a lender would be willing to loan you. Once you have given an estimate of your income and debts, the lender will provide you with a written statement showing your maximum loan amount based on your debt-to-income ratio. Pre-qualification is only a preliminary decision, and not a full approval or pre-approval. Pre-qualification can help you figure out if buying a home is a viable option and what your price range might be. But remember, these figures are guidelines and not guarantees.</div>
+		<h1 class="text-center mar-top30">Get Pre-Qualified* Today!</h1>
+		<h2 class="text-center mar-top15">(and get a list of homes currently for sale!)</h2>
 	</div>
 </div>
 
@@ -95,13 +94,13 @@
 	<div class="request-form-right request-info">
 		<%= render 'layouts/messages' %>
 		<%= simple_form_for @guest do |g| %>
-			<%= g.input :want_list, as: :boolean, label: false, inline_label: "YES! I would like a list of homes in my price range!" %>
+			<%= g.input :want_list, as: :boolean, :input_html => { :checked => true }, label: false, inline_label: "YES! I would like a list of homes in my price range!" %>
 			<%= g.input_field :beds, label: false, placeholder: "No. of beds", class: "beds-field" %>
 			<%= g.input_field :baths, label: false, placeholder: "No. of baths", class: "baths-field" %>
 			<%= g.input_field :sqft, label: false, placeholder: "Min. Sq Ft", class: "sqft-field" %>
-			<%= g.input :areas, label: false, placeholder: "Areas of town you are interested in" %>
+			<%= g.input :areas, label: false, placeholder: "Must-have features of your next home" %>
 			<div class="prequalify-checkbox">
-				<%= g.input :preapproval, as: :boolean, label: false, inline_label: "YES, I WANT TO KNOW WHAT I PREQUALIFY FOR!", class: "prequalify-checkbox" %>
+				<%= g.input :preapproval, as: :boolean, :input_html => { :checked => true }, label: false, inline_label: "YES, I WANT TO KNOW WHAT I PREQUALIFY FOR!", class: "prequalify-checkbox" %>
 			</div>
 		<% # end %>
 	</div>
@@ -115,4 +114,11 @@
 		</div>
 	<% end %>
 </div>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2 mar-top20 disclaimer">
+		<span class="asterisk-lg">*</span>A mortgage pre-qualification is an estimate of how much a lender would be willing to loan you. Once you have given an estimate of your income and debts, the lender will provide you with a written statement showing your maximum loan amount based on your debt-to-income ratio. Pre-qualification is only a preliminary decision, and not a full approval or pre-approval. Pre-qualification can help you figure out if buying a home is a viable option and what your price range might be. But remember, these figures are guidelines and not guarantees.
+	</div>
+</div>
+
 
