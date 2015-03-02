@@ -348,6 +348,15 @@ span.help-inline {
   }
 }
 
+input[data-role='money'] {
+	background: #ffffff url(image-path('dollar-sign.png')) no-repeat scroll 4px 10px;
+  	padding: 12px 12px 12px 22px !important;
+}
+
+.radio input[type="radio"] {
+	margin-left: -28px;
+}
+
 // ==========================================
 // Guests#new
 // ==========================================
@@ -573,12 +582,14 @@ span.asterisk-lg {
 			margin: 5px auto 0 auto;
 		}
 	}
+	#guest_areas {
+		width: 427px;
+	}
 	input, textarea {
 		border-radius: 3px;
 		border: 3px solid #CCC;
 		padding: 5px;
 		margin-left: -20px;
-		width: 427px;
 		@media screen and (max-width: 500px) {
 			margin: 5px auto 0 auto;
 			width: 290px;
@@ -714,17 +725,6 @@ section.thank-you {
 	margin-top: 10px;
 	text-align:center;
 	color:$ltblue;
-	//white-space: nowrap;
-	// @media screen and (max-width: 1200px) {
-	// 	margin-left: -40px;
-	// }
-	// @media screen and (max-width: 990px) {
-	// 	margin-left: 80px;
-	// }
-	// @media screen and (max-width: 767px) {
-	// 	margin-left: 0;
-	// 	text-align: center;
-	// }
 	i {
 		font-size: 24px;
 		padding-left: 5px;
@@ -732,17 +732,24 @@ section.thank-you {
 	}
 }
 
-.preapproval-results {
-	margin: 50px auto;
-	border: 5px dashed #F3A771;
-	padding: 30px;
-	width: 70%;
-	text-align: center;
-}
+// .preapproval-results {
+// 	margin: 50px auto;
+// 	border: 5px dashed #F3A771;
+// 	padding: 30px;
+// 	width: 70%;
+// 	text-align: center;
+// }
+
+
+
+// Congrats Page - prequal#show
 
 h1.congrats {
 	font-size: 48px;
 	font-weight: 500;
+	@media (max-width: 400px) {
+		font-size: 35px;
+	}
 }
 
 .lender-area {
@@ -766,9 +773,11 @@ h1.congrats {
 	margin-top: 30px;
 }
 
-// .radio, .checkbox {
-// 	display: inline !important;
-// }
+.your-number-info h1 {
+	display: block;
+	text-align: center;
+	margin: 35px 0;
+}
 
 .prequal-contact-box {
 	border: 1px solid $ltgray;
@@ -795,6 +804,9 @@ h1.congrats {
 		}
 		@media (max-width: 767px) {
 			width: 250px;
+		}
+		@media (max-width: 400px) {
+			width: 200px;
 		}
 	}
 	.btn-rbsubmit {
