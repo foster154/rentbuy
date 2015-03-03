@@ -1,17 +1,12 @@
 <!-- about -->
 <div class="container-fluid" style="padding:0;">
 
-	<% if @guest.email.blank? && @guest.preapproval.blank? # initial search (no email, no preapproval) %> 
-		<%= render 'guests/partials/property_results' %>
-
-	<% elsif @guest.email.present? && @guest.preapproval.blank? # supplied an email, but no preapproval %>
+ 	<% if @guest.email.present? && @guest.preapproval.blank? # supplied an email, but no preapproval %>
 		<%= render 'guests/partials/thank_you' %>
 
-	<% elsif @guest.preapproval.present? # go to preapproved %>
-		<%= render 'guests/partials/preapproval' %>
-
 	<% else %>
-		Something went wrong.
+		<%= render 'guests/partials/property_results' %>
+		
 	<% end %>
 					
 </div>

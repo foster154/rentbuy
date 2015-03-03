@@ -41,7 +41,7 @@ class GuestsController < ApplicationController
         redirect_to results_path(id: @guest.id)
       end
     else
-      redirect_to results_path(id: @guest.id)
+      redirect_to results_path(id: @guest.id), alert: "Please enter a valid email address!"
     end
   end
 

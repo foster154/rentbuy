@@ -92,7 +92,7 @@
 	</div>
 
 	<div class="request-form-right request-info">
-		<%= render 'layouts/messages' %>
+		
 		<%= simple_form_for @guest do |g| %>
 			<%= g.input :want_list, as: :boolean, :input_html => { :checked => true }, label: false, inline_label: "YES! I would like a list of homes in my price range!" %>
 			<%= g.input_field :beds, label: false, placeholder: "No. of beds", class: "beds-field" %>
@@ -108,9 +108,10 @@
 </div>
 
 <div class="row mar-top100 mar-bot50 align-center request-info-submit">
-		<%= g.input_field :email, label: false, placeholder: "Your Best Email Address (required)", required: true, class: "email-field" %>
+		<%= render 'layouts/messages' %>
+		<%= g.input_field :email, label: false, placeholder: "Your Best Email Address (required)", required: true, class: "email-field mar-top20" %>
 		<div class="form-actions">
-		    <%= g.button :submit, "NEXT >>", class: "btn-rbsubmit" %>
+		    <%= g.button :submit, "NEXT >>", class: "btn-rbsubmit mar-top20" %>
 		</div>
 	<% end %>
 </div>
