@@ -5,8 +5,7 @@ class PrequalsController < ApplicationController
   respond_to :html
 
   def index
-    @prequals = Prequal.all
-    respond_with(@prequals)
+    redirect_to root_url
   end
 
   def show

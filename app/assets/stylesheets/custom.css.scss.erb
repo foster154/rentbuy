@@ -78,6 +78,11 @@ small {
 	font-weight: 100;
 }
 
+.max-width-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
 /*==========================================================================
   Misc & Adjust 
  ========================================================================== */
@@ -748,30 +753,42 @@ h1.congrats {
 }
 
 .lender-area {
-	float: right;
+	//float: right;
 	border: 1px solid $ltgray;
 	border-radius: 5px;
-	padding: 10px;
-	margin: 0 0 30px 50px;
+	//padding: 10px;
+	padding: 20px 40px;
+	margin: 0 auto 30px auto;
+	width: 300px;
+}
+
+.lender-title {
+	color: $ltblue;
+	font-weight: 500;
+	font-size: 16px;
+	text-align: center;
 }
 
 .lender-contact {
 	clear: both;
 }
 .lender-pic {
-	float: left;
-	margin: 0 40px;
+	//float: left;
+	margin: 20px 40px;
 	border-radius: 50%;
 	height: 110px;
 }
 .lender-info {
-	margin-top: 30px;
+	text-align: center;
 }
 
-.your-number-info h1 {
-	display: block;
-	text-align: center;
-	margin: 35px 0;
+.your-number-info {
+	min-width: 250px;
+	h1 {
+		display: block;
+		text-align: center;
+		margin: 50px 0;
+	}
 }
 
 .prequal-contact-box {

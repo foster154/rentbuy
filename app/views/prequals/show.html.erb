@@ -1,132 +1,150 @@
-<div class="row">
-	<div class="col-xs-12">
-		<h1 class="text-center mar-top40 congrats">Congratuations!</h1>
-	</div>
-</div>
-<div class="col-sm-10 col-sm-offset-1 mar-top30">
-	<div class="lender-area">
-		<div class="lender-video">
-			<iframe width="420" height="236" src="https://www.youtube.com/embed/eDd_TAoWzP0" frameborder="0" allowfullscreen style="float:right;" class="mar-bot30"></iframe>
+<div class="max-width-wrapper">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="text-center mar-top40 congrats">Congratuations!</h1>
 		</div>
-		<div class="lender-contact">
-			<%= image_tag 'dave-woodland-lender.jpg', class: 'lender-pic' %>
-			<div class="lender-info">
-				<div class="mar-top10"><strong>Dave Woodland</strong></div>
-				<div>Signet Mortgage</div>
-				<div>NMLS ID: 97w3497w394</div>
-				<div>Phone: 876-543-2323</div>
-			</div>
-		</div>
-	</div> <!-- /.lender-info -->
-
-	<div class="your-number-info">
-		<p>Based on the information already collected, <br /> you could be pre-qualified for a home purchase of:</p>
-		<% preapproved(@prequal.income, @prequal.debt, @prequal.down_payment) %>
-
-		<% if @prequal.military %>
-
-			<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
-			<p style="max-width: 500px;"><strong>First and foremost, thank you for your service.</strong> If you qualify for a VA loan, a downpayment will NOT be required. This one of the many great aspects of a VA loan! Talk to your matched lender for some of the other great features of a VA loan.</p>
-			<br>
-
-		<% elsif @prequal.income.to_i < 90001 && @prequal.down_payment.to_i < 5001 %>
-
-			<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
-			<p style="max-width: 500px;">We have calculated your estimated purchase price based on your monthly income only. Based on the information you have provided, you could qualify for a $0 down payment loan option!</p> 
-			<br>
-			<p><em>Talk with a lender about all of your loan options, including the possiblity of $0 down.</em></p>
-			<br>
-
-		<% elsif $your_number == $can_afford_down %>
-
-			<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
-			<p style="max-width: 500px;">Based on your income you would qualify <strong><%= number_to_currency($can_afford_income, precision: 0) %></strong> if you could come up with 3.5% down or more.</p> 
-			<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>
-
-		<% elsif $your_number == $can_afford_income %>
-
-			<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
-			<p style="max-width: 500px;">Based on your income you would qualify <strong><%= number_to_currency($can_afford_income, precision: 0) %></strong> if you could come up with 3.5% down or more.</p> 
-			<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>
-
-			
-		<% elsif $your_number == @prequal.down_payment.to_i %>
-
-			<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
-			<p><em>This number is based on your down payment... In order to qualify for a larger mortgage, it may be beneficial to seek an increase in income, or to pay down monthly debts.</em></p>			
-
-		<% end %>
-
 	</div>
+	<div class="col-sm-10 col-sm-offset-1 mar-top30">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="your-number-info">
+					<p>Based on the information already collected, <br /> you could be pre-qualified for a home purchase of:</p>
+					<% preapproved(@prequal.income, @prequal.debt, @prequal.down_payment) %>
 
-	<div class="clear-both">
-	<% if @prequal.prequal_phone.present? || @prequal.prequal_email.present? %>
-			<div class="prequal-contact-thank-you">
-				<% if @prequal.yes_call.present? %>
-					Thank you! Your lender will reach out to you by phone at the requested time!
-					<% elsif @prequal.yes_email.present? %>
-					Thank you! Your lender will reach out to you by email soon!
-					<% else %>
-					Thank you! Your lender will reach out to you soon!
-				<% end %>
-				<div class="mar-top20 mar-bot20">Or give him a call at your convenience:</div>
-				<div class="lender-contact">
-					<%= image_tag 'dave-woodland-lender.jpg', class: 'lender-pic' %>
-					<div class="lender-info">
-						<div class="mar-top10"><strong>Dave Woodland</strong></div>
-						<div>Signet Mortgage</div>
-						<div>NMLS ID: 97w3497w394</div>
-						<div>Phone: 876-543-2323</div>
-					</div>
+					<% if $can_afford_income <= 0 %>
+						<h1 class="mar-top20">$0</h1>
+						<p style="max-width: 500px;">Since no prequalification calculator can be 100% accurate, we still suggest contacting a lender to discuss your situation personally. They have a variety of loans types to fit many life situations!</p>
+						<br>
+
+					<% elsif @prequal.military %>
+
+						<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
+						<p style="max-width: 500px;"><strong>First and foremost, thank you for your service.</strong> If you qualify for a VA loan, a downpayment will NOT be required. This one of the many great aspects of a VA loan! Talk to your matched lender for some of the other great features of a VA loan.</p>
+						<br>
+
+					<% elsif @prequal.income.to_i < 90001 && @prequal.down_payment.to_i < 5001 %>
+
+						<h1 class="mar-top20"><%= number_to_currency($can_afford_income, precision: 0) %></h1>
+						<p style="max-width: 500px;">We have calculated your estimated purchase price based on your monthly income only. Based on the information you have provided, you could qualify for a $0 down payment loan option!</p> 
+						<br>
+						<p><em>Talk with a lender about all of your loan options, including the possiblity of $0 down.</em></p>
+						<br>
+
+					<% elsif $your_number == $can_afford_down %>
+
+						<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
+						<p style="max-width: 500px;">Based on your income you would qualify <strong><%= number_to_currency($can_afford_income, precision: 0) %></strong> if you could come up with 3.5% down or more.</p> 
+						<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>
+
+					<% elsif $your_number == $can_afford_income %>
+
+						<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
+						<p style="max-width: 500px;">Based on your income you would qualify <strong><%= number_to_currency($can_afford_income, precision: 0) %></strong> if you could come up with 3.5% down or more.</p> 
+						<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>
+
+						
+					<% elsif $your_number == @prequal.down_payment.to_i %>
+
+						<h1 class="mar-top20"><%= number_to_currency($your_number, precision: 0) %></h1>
+						<p><em>This number is based on your down payment... In order to qualify for a larger mortgage, it may be beneficial to seek an increase in income, or to pay down monthly debts.</em></p>			
+						
+					<% end %>
 				</div>
 			</div>
-		<% else %> 
-		<h1 class="mar-top30 align-center">You are less than 10 minutes from getting pre-approved!</h1> 
-		<h3 class="align-center">It's so easy we can get it done with 1 phone call!</h3>
+			<div class="col-sm-5 col-sm-offset-1">
+				<div class="lender-area">
+					<div class="lender-title">Your Local Lender:</div>
+		<!-- 			<div class="lender-video">
+						<iframe width="420" height="236" src="https://www.youtube.com/embed/eDd_TAoWzP0" frameborder="0" allowfullscreen style="float:right;" class="mar-bot30"></iframe>
+					</div> -->
+					<div class="lender-contact">
 
-			<div class="row mar-top60">
-				<%= simple_form_for @prequal do |f| %>
-					<%= f.error_notification %>
-				 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-				 		<div class="prequal-contact-box call-emphasize">
-				 			<div class="faster-callout">Faster!</div>
-				 			<%= f.input :yes_call, as: :boolean, inline_label: "YES! Please call me to discuss my mortgage options!", label: false %>
-				 			<%= f.input_field :name, label: false, placeholder: "First & Last Name", class: "contact-field" %>
-				 			<%= f.input_field :prequal_phone, label: false, placeholder: "Your Best Phone Number", class: "contact-field" %>
-				 			<%= f.input_field :call_time, label: false, placeholder: "Best Time to Call", class: "contact-field" %>
-				 			<div class="form-actions">
-							    <%= f.button :submit, "Submit", class: "btn-rbsubmit" %>
-							</div>
-				 		</div>
-				 	</div>
-				 	<div class="col-sm-2 col-xs-12">
-				 		<div class="prequal-or">or...</div>
-				 	</div>
-				 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-				 		<div class="prequal-contact-box">
-				 			<%= f.input :yes_email, as: :boolean, label: false, inline_label: "I'd like to continue the conversation over email" %>
-				 			<%= f.input_field :name, label: false, placeholder: "First & Last Name", class: "contact-field" %>
-				 			<%= f.input :prequal_email, label: false, input_html: { :value => @guest.email }, class: "contact-field" %>
-				 			<div class="form-actions">
-							    <%= f.button :submit, "Submit", class: "btn-rbsubmit" %>
-							</div>
-				 		</div>
-				 	</div>
-				<% end %>
+						<%= image_tag 'dave-woodland-lender.jpg', class: 'lender-pic' %>
+						<div class="lender-info">
+							<div class="mar-top10"><strong>Dave Woodland</strong></div>
+							<div>Signet Mortgage</div>
+							<div>NMLS ID: 97w3497w394</div>
+							<div>Phone: 876-543-2323</div>
+						</div>
+					</div>
+				</div> <!-- /.lender-info -->
 			</div>
-		<% end %>
+		</div>
+
+		<div class="row clear-both">
+			
+		<% if @prequal.prequal_phone.present? || @prequal.prequal_email.present? %>
+				<div class="prequal-contact-thank-you">
+					<% if @prequal.yes_call.present? %>
+						Thank you! Your lender will reach out to you by phone at the requested time!
+						<% elsif @prequal.yes_email.present? %>
+						Thank you! Your lender will reach out to you by email soon!
+						<% else %>
+						Thank you! Your lender will reach out to you soon!
+					<% end %>
+					<div class="mar-top20 mar-bot20">Or give him a call at your convenience:</div>
+					<div class="lender-contact">
+						<%= image_tag 'dave-woodland-lender.jpg', class: 'lender-pic' %>
+						<div class="lender-info">
+							<div class="mar-top10"><strong>Dave Woodland</strong></div>
+							<div>Signet Mortgage</div>
+							<div>NMLS ID: 97w3497w394</div>
+							<div>Phone: 876-543-2323</div>
+						</div>
+					</div>
+				</div>
+			<% else %> 
+			<h1 class="mar-top30 align-center">You are less than 10 minutes from getting pre-approved!</h1> 
+			<h3 class="align-center">It's so easy we can get it done with 1 phone call!</h3>
+
+				<div class="row mar-top60">
+					<%= simple_form_for @prequal do |f| %>
+						<%= f.error_notification %>
+					 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+					 		<div class="prequal-contact-box call-emphasize">
+					 			<div class="faster-callout">Faster!</div>
+					 			<%= f.input :yes_call, as: :boolean, inline_label: "YES! Please call me to discuss my mortgage options!", label: false %>
+					 			<%= f.input_field :name, label: false, placeholder: "First & Last Name", class: "contact-field" %>
+					 			<%= f.input_field :prequal_phone, label: false, placeholder: "Your Best Phone Number", class: "contact-field" %>
+					 			<%= f.input_field :call_time, label: false, placeholder: "Best Time to Call", class: "contact-field" %>
+					 			<div class="form-actions">
+								    <%= f.button :submit, "Submit", class: "btn-rbsubmit" %>
+								</div>
+					 		</div>
+					 	</div>
+					 	<div class="col-sm-2 col-xs-12">
+					 		<div class="prequal-or">or...</div>
+					 	</div>
+					 	<div class="col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+					 		<div class="prequal-contact-box">
+					 			<%= f.input :yes_email, as: :boolean, label: false, inline_label: "I'd like to continue the conversation over email" %>
+					 			<%= f.input_field :name, label: false, placeholder: "First & Last Name", class: "contact-field" %>
+					 			<% if @guest %>
+					 				<%= f.input :prequal_email, label: false, input_html: { :value => @guest.email  }, class: "contact-field" %>
+					 			<% else %>
+					 				<%= f.input :prequal_email, label: false, placeholder: "Your Best Email Address", class: "contact-field" %>
+					 			<% end %>
+					 			<div class="form-actions">
+								    <%= f.button :submit, "Submit", class: "btn-rbsubmit" %>
+								</div>
+					 		</div>
+					 	</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+
+		<h3 class="mar-top50">FAQ</h3>
+		<p><strong>Q: Do I need a Pre-Approval? And what’s the difference from a Pre-Qualification?</strong></p>
+
+		<p>A: YES! If you are ready to start home shopping you should absolutely get a pre-approval letter. Only a Loan Officer can give you a pre-approval. Your pre-qualification is great first step in understanding where you stand as you begin to look.</p>
+
+		<p><strong>Q: Are there any zero down loan options out there for me?</strong></p>
+
+		<p>A: YES! 0% Down options are commonly available to many borrowers through financing programs like Idaho Housing and Finance Administration (IHFA), the Veteran Affairs (VA) and Boise Neighborhood Housing (NHS). Your loan officer will be delivering information to see if you qualify for 1 of the many programs.</p>
+
+		<p><strong>Q: I heard my Credit Score really impacts my ability to get a loan, is this true?</strong></p>
+
+		<p>A: YES! And your loan officer can get you your credit score when you begin the process of getting a pre-approval letter!! Credit scores, foreclosures and short sales can impact what you can qualify for, however, in many cases, they do not disqualify you from purchasing a home. Your loan officer will verify that you do in fact meet todays guidelines or let you know a date when you will.</p>
 	</div>
-
-	<h3 class="mar-top50">FAQ</h3>
-	<p><strong>Q: Do I need a Pre-Approval? And what’s the difference from a Pre-Qualification?</strong></p>
-
-	<p>A: YES! If you are ready to start home shopping you should absolutely get a pre-approval letter. Only a Loan Officer can give you a pre-approval. Your pre-qualification is great first step in understanding where you stand as you begin to look.</p>
-
-	<p><strong>Q: Are there any zero down loan options out there for me?</strong></p>
-
-	<p>A: YES! 0% Down options are commonly available to many borrowers through financing programs like Idaho Housing and Finance Administration (IHFA), the Veteran Affairs (VA) and Boise Neighborhood Housing (NHS). Your loan officer will be delivering information to see if you qualify for 1 of the many programs.</p>
-
-	<p><strong>Q: I heard my Credit Score really impacts my ability to get a loan, is this true?</strong></p>
-
-	<p>A: YES! And your loan officer can get you your credit score when you begin the process of getting a pre-approval letter!! Credit scores, foreclosures and short sales can impact what you can qualify for, however, in many cases, they do not disqualify you from purchasing a home. Your loan officer will verify that you do in fact meet todays guidelines or let you know a date when you will.</p>
-</div>
+</div> <!-- /.max-width-wrapper -->
