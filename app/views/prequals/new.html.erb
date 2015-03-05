@@ -9,6 +9,7 @@
 	<%= simple_form_for @prequal do |f| %>
 
 	  	<%= f.input :guest_id, :as => :hidden, :input_html => { :value => params[:guest_id] } %>
+	  	<%= f.input :session_id, :as => :hidden, :input_html => { :value => request.session_options[:id] } %>
 
 	  	<div class="row">
 	  		<div class="col-sm-6">

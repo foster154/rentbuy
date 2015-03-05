@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require autoNumeric
+//= require jquery.maskedinput.min
 //= require_tree .
 //= require turbolinks

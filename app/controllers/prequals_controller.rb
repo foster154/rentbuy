@@ -1,6 +1,7 @@
 class PrequalsController < ApplicationController
   
   before_action :set_prequal, only: [:show, :edit, :update, :destroy]
+  before_action :check_session, only: [ :show ]
 
   respond_to :html
 
@@ -48,8 +49,15 @@ class PrequalsController < ApplicationController
       @prequal = Prequal.find(params[:id])
     end
 
+    def check_session
+      unless request.session_options[:id] == @prequal.session_id
+        redirect_to root_url
+      end
+    end
+
     def prequal_params
       params.require(:prequal).permit(:guest_id,
+                                      :session_id,
                                       :name, 
                                       :income, 
                                       :debt, 
