@@ -4,7 +4,8 @@ class Prequal < ActiveRecord::Base
 	before_create :strip_formatting_from_numbers
 
 	after_save :deliver_guest_prequal_email, if: :military_changed?
-	after_save :deliver_prequal_info_to_agent_lender, if: ( :yes_call_changed? || :yes_email_changed? )
+	after_save :deliver_prequal_info_to_agent, if: ( :yes_call_changed? || :yes_email_changed? )
+	after_save :deliver_prequal_info_to_lender, if: ( :yes_call_changed? || :yes_email_changed? )
 
 	belongs_to :guest
 
@@ -31,7 +32,11 @@ class Prequal < ActiveRecord::Base
       PrequalMailer.prequal_submission_to_guest(self).deliver
     end
 
-    def deliver_prequal_info_to_agent_lender
-      PrequalMailer.prequal_submission_to_agent_lender(self).deliver
+    def deliver_prequal_info_to_agent
+      PrequalMailer.prequal_submission_to_agent(self).deliver
+    end
+
+    def deliver_prequal_info_to_lender
+      PrequalMailer.prequal_submission_to_lender(self).deliver
     end
 end
