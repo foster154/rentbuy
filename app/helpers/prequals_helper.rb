@@ -1,6 +1,6 @@
 module PrequalsHelper
 
-	def preapproved(income, debt, down_payment)
+	def prequal_calculator(income, debt, down_payment)
 		income = income.to_i
 		debt = debt.to_i
 		down_payment = down_payment.to_i
@@ -18,12 +18,27 @@ module PrequalsHelper
 		$can_afford_income = $max_principle / 0.965 + (down_payment - $max_principle / 0.965 * 0.035)
 		$can_afford_down = down_payment / 0.035
 
-		if (income.to_i / 12) - debt <= 0
-			$your_number = down_payment
-		elsif $check_down_payment >= 0
+		# if (income.to_i / 12) - debt <= 0
+		# 	$your_number = down_payment
+		# elsif $check_down_payment >= 0
+		# 	$your_number = $can_afford_income
+		# else
+		# 	$your_number = $can_afford_down
+		# end
+
+		case
+		when (income.to_i / 12) - debt <= 0  # their monthly income is less than their monthly debt
+			$your_number = down_payment      # all you can afford is what you have down. aka, no mortgage.
+			$prequal_status = 1
+
+		when $check_down_payment >= 0
 			$your_number = $can_afford_income
-		else
+
+		when
 			$your_number = $can_afford_down
+			
+		else
+			$your_number = "Sorry, an error has occured."
 		end
 	end
 end

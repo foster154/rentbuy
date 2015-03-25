@@ -9,7 +9,7 @@
 			<div class="col-sm-6">
 				<div class="your-number-info">
 					<p>Based on the information already collected, <br /> you could afford for a home purchase of:</p>
-					<% preapproved(@prequal.income, @prequal.debt, @prequal.down_payment) %>
+					<% prequal_calculator(@prequal.income, @prequal.debt, @prequal.down_payment) %>
 
 					<% if $can_afford_income <= 0 %>
 						<h1 class="mar-top20">$0</h1>
