@@ -4,7 +4,7 @@ class PrequalMailer < ActionMailer::Base
   def prequal_submission_to_guest(prequal)
     @prequal = prequal
     if Rails.env.production?
-    	mail to: @prequal.email, cc: "myrentwillbuy@gmail.com", reply_to: "gcrum@iccu.com", subject: "My Rent Will Buy: Congratuations!"
+    	mail to: @prequal.guest.email, cc: "myrentwillbuy@gmail.com", reply_to: "gcrum@iccu.com", subject: "My Rent Will Buy: Congratuations!"
     else
     	mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", reply_to: "gcrum@iccu.com", subject: "(DEV) My Rent Will Buy: Congratuations!"
 	  end
