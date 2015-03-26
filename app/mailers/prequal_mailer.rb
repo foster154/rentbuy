@@ -22,7 +22,7 @@ class PrequalMailer < ActionMailer::Base
   def prequal_submission_to_lender(prequal)
     @prequal = prequal
     if Rails.env.production?
-      mail to: "", cc: "myrentwillbuy@gmail.com", subject: "New Lead from My Rent Will Buy"
+      mail to: "gcrum@iccu.com", cc: "myrentwillbuy@gmail.com", subject: "New Lead from My Rent Will Buy"
     else
       mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) New Prequal Lead from My Rent Will Buy"
     end
