@@ -99,7 +99,7 @@
 				<%= render 'layouts/messages' %>
 
 				<%= g.input :want_list, as: :boolean, :input_html => { :checked => true }, label: false, inline_label: "YES! I would like a list of homes in my price range!" %>
-				<%= g.input :preapproval, as: :boolean, :input_html => { :checked => true }, label: false, inline_label: "YES, TELL ME MY MAX HOME PRICE!" %>
+				<%= g.input :preapproval, as: :boolean, :input_html => { :checked => true }, label: false, inline_label: "YES! Let's calculate my max home price!" %>
 				<%= g.input_field :beds, label: false, placeholder: "No. of beds", class: "beds-field" %>
 				<%= g.input_field :baths, label: false, placeholder: "No. of baths", class: "baths-field" %>
 				<%= g.input_field :sqft, label: false, placeholder: "Min. Sq Ft", class: "sqft-field" %>
@@ -115,7 +115,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-sm-8 col-xs-10 col-sm-offset-2 col-xs-offset-1 mar-top20 disclaimer">
+		<div class="col-sm-8 col-xs-10 col-sm-offset-2 col-xs-offset-1 mar-top60 disclaimer">
 			<p><span class="asterisk-lg">*</span>Payment estimated using a 4% fixed Annual Percentage Rate with 5% downpayment. Payments have been amortized over 30 years. An estimation has been used for property taxes, home owners insurance and private mortgage insurance. Payment will vary.</p>
 		</div>
 	</div>

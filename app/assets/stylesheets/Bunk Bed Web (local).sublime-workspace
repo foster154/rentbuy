@@ -1,0 +1,1028 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"dk",
+				"dkgreen"
+			],
+			[
+				"session",
+				"session_id"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"your",
+				"your_number"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"pre",
+				"preapproved"
+			],
+			[
+				"pr",
+				"private"
+			],
+			[
+				"can",
+				"can_afford_down"
+			],
+			[
+				"you",
+				"your_number"
+			],
+			[
+				"down",
+				"down_payment"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"m",
+				"margin-bottom"
+			],
+			[
+				"lt",
+				"ltblue"
+			],
+			[
+				"ye",
+				"yes_email"
+			],
+			[
+				"prequal",
+				"prequal_phone"
+			],
+			[
+				"gue",
+				"guest_id"
+			],
+			[
+				"pa",
+				"params"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"floa",
+				"float-left"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"request",
+				"request-form-left"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"input",
+				"input_field"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"base",
+				"base_dk2"
+			],
+			[
+				"max",
+				"max_monthly_payment"
+			],
+			[
+				"dow",
+				"down_payment"
+			],
+			[
+				"so",
+				"sort_direction"
+			],
+			[
+				"sor",
+				"sort_order"
+			],
+			[
+				"sort",
+				"sort_column"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"cen",
+				"align-center"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"nav",
+				"navbar-brand"
+			],
+			[
+				"navbar",
+				"navbar-toggle"
+			],
+			[
+				"area",
+				"area_id"
+			],
+			[
+				"pro",
+				"properties"
+			],
+			[
+				"q",
+				"queries"
+			],
+			[
+				"p",
+				"placeholder"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"st",
+				"style	Attr"
+			],
+			[
+				"au",
+				"autoplay_music"
+			],
+			[
+				"c",
+				"color"
+			],
+			[
+				"ad",
+				"address"
+			],
+			[
+				"tour",
+				"tour-graphista"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"image",
+				"image-path"
+			],
+			[
+				"mag",
+				"margin-bottom"
+			],
+			[
+				"s",
+				"style	Attr"
+			],
+			[
+				"i",
+				"important"
+			],
+			[
+				"re",
+				"registrations"
+			],
+			[
+				"lin",
+				"line-height"
+			],
+			[
+				"card",
+				"card_code"
+			],
+			[
+				"card_",
+				"card_number"
+			],
+			[
+				"to",
+				"to_date"
+			],
+			[
+				"begin",
+				"beginning_of_week"
+			],
+			[
+				"th",
+				"thursday"
+			],
+			[
+				"beg",
+				"beginning_of_week"
+			],
+			[
+				"text",
+				"text_field"
+			],
+			[
+				"la",
+				"last_name"
+			],
+			[
+				"who",
+				"whole_name"
+			],
+			[
+				"fie",
+				"friends"
+			],
+			[
+				"object",
+				"object_id"
+			],
+			[
+				"cel",
+				"cellspacing	Attr"
+			],
+			[
+				"no",
+				"no-background"
+			],
+			[
+				"bakc",
+				"background-color"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"photo-",
+				"photo-preview-list"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"float",
+				"float-right"
+			],
+			[
+				"flo",
+				"float"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"follo",
+				"followup_due_date"
+			],
+			[
+				"new",
+				"new_case_btn"
+			],
+			[
+				"b",
+				"background-color"
+			],
+			[
+				"btn",
+				"btn-primary"
+			],
+			[
+				"show",
+				"show_branded"
+			],
+			[
+				"case",
+				"case_type"
+			],
+			[
+				"btn-",
+				"btn-spacer"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"al",
+				"text-align"
+			],
+			[
+				"gr",
+				"grayLight"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"na",
+				"nav-column"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"user",
+				"user_image"
+			],
+			[
+				"n",
+				"normal"
+			],
+			[
+				"le",
+				"letter-spacing"
+			],
+			[
+				"sp",
+				"letter-spacing"
+			],
+			[
+				"up",
+				"update_attribute"
+			],
+			[
+				"bool",
+				"boolean"
+			],
+			[
+				"bas",
+				"base_title"
+			],
+			[
+				"page",
+				"page_title"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"se",
+				"setup_navigation"
+			],
+			[
+				"bak",
+				"background"
+			],
+			[
+				"admin",
+				"admin_user"
+			],
+			[
+				"fla",
+				"flash"
+			],
+			[
+				"Admin",
+				"AdminUser"
+			],
+			[
+				"Ad",
+				"AdminUser"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"adm",
+				"admin_user"
+			],
+			[
+				"auth",
+				"authorized_user"
+			],
+			[
+				"F",
+				"FORBIDDEN_USERNAMES"
+			],
+			[
+				"Con",
+				"CONTENT_TYPES"
+			],
+			[
+				"val",
+				"validates_length_of"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"si",
+				"simple_string"
+			],
+			[
+				"html",
+				"html_safe"
+			],
+			[
+				"sub",
+				"subject_params"
+			],
+			[
+				"Sec",
+				"section_edits"
+			],
+			[
+				"section",
+				"section_edits"
+			],
+			[
+				"admi",
+				"admin_user_id"
+			],
+			[
+				"admin_u",
+				"admin_users_pages"
+			],
+			[
+				"lam",
+				"lambda"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/foster154/Sites/MAMP/bunkbed/wp-content/themes/bunkbedweb/front-page.php",
+			"settings":
+			{
+				"buffer_size": 539,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/foster154/Sites/MAMP/bunkbed/wp-content/themes/bunkbedweb/style.css",
+			"settings":
+			{
+				"buffer_size": 19143,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/foster154/Sites/MAMP/bunkbed/wp-content/themes/bunkbedweb/header.php",
+			"settings":
+			{
+				"buffer_size": 1507,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 107.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/foster154/Sites/MAMP/bunkbed/wp-content/themes/bunkbedweb"
+	],
+	"file_history":
+	[
+		"/Users/foster154/Sites/MAMP/bunkbed/wp-content/themes/bunkbedweb/style.css",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/prequals/show.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/partials/_property_results.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/prequals/edit.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/prequals/new.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/mailers/prequal_mailer.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/prequal_mailer/prequal_submission_to_agent.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/models/prequal.rb",
+		"/Users/foster154/Dev/rails/rentbuy/config/routes.rb",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20150305041346_add_session_id_to_prequals.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/controllers/prequals_controller.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/stylesheets/custom.css.scss.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/javascripts/application.js",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/javascripts/custom.js.coffee",
+		"/Users/foster154/Dev/rails/rentbuy/vendor/assets/javascripts/jquery.maskedinput.min.js",
+		"/Applications/MAMP/htdocs/wp-content/themes/kidcheck/template-download_list.php",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/partials/_thank_you.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/layouts/application.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/controllers/guests_controller.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/edit.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/models/guest.rb",
+		"/Users/foster154/Dev/rails/rentbuy/db/schema.rb",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20150228214824_convert_income_debt_down_to_string.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/helpers/prequals_helper.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/prequal_mailer/prequal_submission_to_agent_lender.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/Gemfile",
+		"/Users/foster154/Dev/rails/rentbuy/config/initializers/money.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/javascripts/jquery.priceformat.min.js",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/javascripts/jquery.price_format.2.0.min.js",
+		"/Users/foster154/Dev/rails/rentbuy/app/helpers/application_helper.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/pages/thank_you.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/controllers/pages_controller.rb",
+		"/Users/foster154/Dev/Purchased and Sample Code/WordPress/Treehouse- WP Dev/WordPress-Theme-Dev---Treehouse/static-theme/blog.html",
+		"/Users/foster154/Desktop/prequals_helper_sandbox.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/layouts/application-front.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/layouts/_google_analytics.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guest_mailer/request_form_submission.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/prequal_mailer/prequal_submission_to_guest.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/stylesheets/_variables.scss",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20150220140840_change_call_time_to_string.rb",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20150219034935_add_contact_info_to_prequals.rb",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20150211044754_remove_fields_from_guests.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/layouts/_navigation.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/new.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/layouts/_footer.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/partials/_form.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guest_mailer/request_form_submission.text.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/stylesheets/theme.css.scss",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/stylesheets/framework_and_overrides.css.scss",
+		"/Users/foster154/Sites/MAMP/foster154/wp-content/themes/foster154-custom/style.css",
+		"/Users/foster154/Dev/rails/rentbuy/app/helpers/guests_helper.rb",
+		"/Users/foster154/Desktop/foster154-working/wp-config.php",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/stylesheets/custom.scss",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/partials/_preapproval_results.html.erb",
+		"/Applications/MAMP/htdocs/bunkbed/wp-config.php",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/partials/_preapproval.html.erb",
+		"/Applications/MAMP/htdocs/wp-content/themes/kidcheck/options/theme-options.php",
+		"/Users/foster154/Dev/rails/rentbuy/app/mailers/guest_mailer.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/partials/_request_form.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/_results.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20150204035006_add_preapproval_fields_to_guests.rb",
+		"/Users/foster154/Dev/rails/rentbuy/config/environments/development.rb",
+		"/Users/foster154/Dev/rails/rentbuy/config/environments/production.rb",
+		"/Users/foster154/Dev/rails/rentbuy/config/application.yml",
+		"/Users/foster154/Desktop/make-child/style.css",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/areas/show.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/properties/index.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/controllers/properties_controller.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/controllers/areas_controller.rb",
+		"/Users/foster154/Dev/rails/rentbuy/config/initializers/paperclip.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/models/property.rb",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20150120043622_add_payment_category_to_properties.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/controllers/queries_controller.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/helpers/properties_helper.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/models/query.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/_guest.html.erb",
+		"/Users/foster154/Documents/KidCheck/Web Backups & Push/Store mirror checkout page sidebar change.html",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/layouts/_navigation_links.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/pages/fair_housing.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/pages/privacy_policy.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/devise/sessions/new.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/_form.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20141209040432_add_fields_to_guests.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/show.html.erb",
+		"/Users/foster154/Documents/KidCheck/Web Backups & Push/www/wp-content/themes/kidcheck/lib/carbon-fields/css/fields.css",
+		"/Users/foster154/Dev/rails/rentbuy/app/assets/stylesheets/application.css.scss",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/areas/index.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/areas/edit.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/users/show.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/properties/edit.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/config/initializers/devise.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/guests/index.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/properties/show.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/models/area.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/properties/_form.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/db/migrate/20141202004839_add_image_column_to_properties.rb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/properties/new.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/areas/_form.html.erb",
+		"/Users/foster154/Dev/rails/rentbuy/app/views/areas/new.html.erb",
+		"/Users/foster154/Desktop/about-us-demo/icon-display.html",
+		"/Users/foster154/Desktop/about-us-demo/style.css",
+		"/Users/foster154/Desktop/about-us-demo/index.html",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/stylesheets/application/custom.css.scss",
+		"/Users/foster154/Dev/rails/tour_app/app/views/static_pages/home.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/stylesheets/application/theme.scss",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/stylesheets/tour-default.css.scss",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/stylesheets/tour-graphista.css.scss",
+		"/Users/foster154/Dev/rails/tour_app/app/views/layouts/tour-default/tour-default.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/app/views/layouts/tour-graphista/_agent_info.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/app/views/layouts/tour-graphista/tour-graphista.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/app/views/layouts/tour-default/_agent_info.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/javascripts/tour-graphista/tour-graphista.js.erb",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/javascripts/tour-default/tour-default.js.erb",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/javascripts/application.js",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/javascripts/application-tour-graphista.js",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/stylesheets/application-tour-graphista.css.scss",
+		"/Users/foster154/Dev/rails/tour_app/app/assets/stylesheets/application-tour-default.css.scss",
+		"/Users/foster154/Downloads/AnimatedResponsiveImageGrid 2/css/style.css",
+		"/Users/foster154/Dev/rails/tour_app/app/views/layouts/application.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/Gemfile",
+		"/Users/foster154/Dev/rails/tour_app/app/controllers/tours_controller.rb",
+		"/Users/foster154/Dev/rails/tour_app/app/helpers/application_helper.rb",
+		"/Users/foster154/Dev/rails/tour_app/app/views/static_pages/features.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/config/sitemap.rb",
+		"/Users/foster154/Dev/rails/tour_app/app/views/tours/new.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/app/views/tours/_form.html.erb",
+		"/Users/foster154/Dev/rails/tour_app/db/migrate/20141013035109_add_options_to_tours.rb",
+		"/Users/foster154/Dev/rails/tour_app/app/views/tours/edit.html.erb"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"#2d3339",
+			"#384047",
+			"h1",
+			"rbs",
+			"income",
+			".radio",
+			"dollar",
+			"update",
+			"submit",
+			"front-page",
+			"front-pa",
+			"prequ",
+			"btn",
+			"foreclosures",
+			"label",
+			"24a2e",
+			"team-mem",
+			"nav",
+			"no-res",
+			"section",
+			"navbar-brand",
+			"guest_prequals_path",
+			"my-rent",
+			"footer",
+			"section",
+			"feat",
+			"slogan",
+			"toggle",
+			"navbar-toggle",
+			"neigh",
+			"agent",
+			"agen",
+			"text",
+			"sound",
+			"add-pa",
+			"add-",
+			"url",
+			"img",
+			"url",
+			"29",
+			"http",
+			"font",
+			"single",
+			"header",
+			"sign",
+			"flip-cl",
+			"footer",
+			"helvetica",
+			"font",
+			"h1",
+			"lato",
+			"profile-info",
+			"nav",
+			"button-clear",
+			"second-option",
+			"modules",
+			"include",
+			">\n",
+			"subs",
+			"<!",
+			"elegant",
+			"lato",
+			"img",
+			"footer",
+			"token",
+			"hr",
+			"center",
+			"customer_id",
+			"pad50",
+			"document",
+			"path",
+			"hr",
+			"log",
+			"logo",
+			"#bannerscollection_zoominout_generous",
+			"side-panel",
+			"function",
+			"map",
+			"padding",
+			"background-image",
+			"sprite",
+			"Lighter",
+			"clear",
+			"block",
+			"ul",
+			"graylight",
+			"999",
+			"depre",
+			"minimap",
+			"signed_in_user",
+			"escape_route",
+			"black",
+			">\n",
+			"map"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#35404f"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/foster154/Sites/MAMP/bunkbed/wp-content/themes/bunkbedweb/front-page.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								47,
+								47
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/foster154/Sites/MAMP/bunkbed/wp-content/themes/bunkbedweb/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5490,
+								5490
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3900.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/foster154/Sites/MAMP/bunkbed/wp-content/themes/bunkbedweb/header.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1507,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								350,
+								350
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Bunk Bed Web (local).sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 337.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
