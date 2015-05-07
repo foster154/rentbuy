@@ -1,5 +1,7 @@
 class GuestsController < ApplicationController
-  before_action :set_guest, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_guest, only: [:show, :step2, :step3, :step4, :results, :final, :edit, :update, :destroy]
+  before_action :check_session, only: [ :results, :final ]
 
   respond_to :html
 
@@ -8,17 +10,23 @@ class GuestsController < ApplicationController
     respond_with(@guests)
   end
 
-  def show
-    @query = @guest.queries.last
-    @areas = Area.all
-    find_properties
+  def new
+    @guest = Guest.new
   end
 
-  def new
-    @areas = Area.all
-    @guest = Guest.new
-    @guest.queries.build
-    render layout: 'application-front'
+  def step2
+  end
+
+  def step3
+  end
+
+  def step4
+  end
+
+  def results
+  end
+
+  def final
   end
 
   def edit
@@ -29,19 +37,40 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(guest_params)
-    @guest.save
-    redirect_to results_path(id: @guest.id)
+    if @guest.save
+      redirect_to step2_path(id: @guest.id)
+    else
+      redirect_to :back
+      flash[:warning] = "Please enter a number for all fields."
+    end
   end
 
   def update
-    if @guest.update(guest_params)
-      if @guest.preapproval.present?
-        redirect_to new_prequal_path(guest_id: @guest.id)
+    if params[:commit] == "On To Step 3 >>"
+      if @guest.update(guest_params)
+        redirect_to step3_path(id: @guest.id)
       else
-        redirect_to results_path(id: @guest.id)
+        redirect_to :back
       end
-    else
-      redirect_to results_path(id: @guest.id), alert: "Please enter a valid email address!"
+    elsif params[:commit] == "Get My Number >>"
+      if @guest.update(guest_params)
+        redirect_to step4_path(id: @guest.id)
+      else
+        redirect_to :back
+      end
+    elsif params[:commit] == "Show My Results!"
+      if @guest.update(guest_params)
+        redirect_to results_path(id: @guest.id)
+      else
+        redirect_to :back
+        flash[:warning] = "Please enter a valid email address."
+      end
+    elsif params[:commit] == "Submit"
+      if @guest.update(guest_params)
+        redirect_to final_path(id: @guest.id)
+      else
+        redirect_to :back
+      end
     end
   end
 
@@ -55,15 +84,34 @@ class GuestsController < ApplicationController
       @guest = Guest.find(params[:id])
     end
 
+    def check_session
+      redirect_to root_url unless request.session_options[:id] == @guest.session_id
+    end
+
     def guest_params
       params.require(:guest).permit(:name, 
                                     :email,
-                                    :want_list, 
-                                    :beds, 
-                                    :baths, 
+                                    :want_list,
+                                    :beds,
+                                    :baths,
                                     :sqft,
                                     :areas, 
                                     :preapproval,
+                                    :income,
+                                    :debt,
+                                    :down_payment,
+                                    :self_employed,
+                                    :first_time_buyer,
+                                    :military,
+                                    :yes_call,
+                                    :yes_email,
+                                    :phone,
+                                    :call_time,
+                                    :session_id,
+                                    :email_page,
+                                    :foreclosure_on_record,
+                                    :sell_before_buy,
+                                    :buy_within_six_months,
                                     queries_attributes: [:guest_id, :area_id, :payment])
     end
 

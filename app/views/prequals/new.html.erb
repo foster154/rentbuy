@@ -6,55 +6,58 @@
 </div>
 
 <div class="row prequal-form">
-	<%= simple_form_for @prequal do |f| %>
+	<%= simple_form_for @guest do |guest_form| %>
 
-	  	<%= f.input :guest_id, :as => :hidden, :input_html => { :value => params[:guest_id] } %>
-	  	<%= f.input :session_id, :as => :hidden, :input_html => { :value => request.session_options[:id] } %>
+		<%= guest_form.simple_fields_for @prequal do |prequal_form| %>
 
-	  	<div class="row">
-	  		<div class="col-sm-6">
-	  			<h1 class="prequalify-field">
-		  			Annual Income 
-		  			<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Your annual income is what you make before taxes. Your lender will use this number to determine how much you can afford.">
-		  				<i class="fa fa-question-circle"></i>
-		  			</span>
-	  			</h1>
-	  		</div>
-	  		<div class="col-sm-6">
-		  		<%= f.text_field :income, label: false, data: { role: 'money'} %>
-		  	</div>
+		  	<%= prequal_form.input :session_id, :as => :hidden, :input_html => { :value => request.session_options[:id] } %>
+
+		  	<div class="row">
+		  		<div class="col-sm-6">
+		  			<h1 class="prequalify-field">
+			  			Annual Income 
+			  			<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Your annual income is what you make before taxes. Your lender will use this number to determine how much you can afford.">
+			  				<i class="fa fa-question-circle"></i>
+			  			</span>
+		  			</h1>
+		  		</div>
+		  		<div class="col-sm-6">
+			  		<%= prequal_form.text_field :income, label: false, data: { role: 'money'} %>
+			  	</div>
+			</div>
+
+			<div class="row">
+		  		<div class="col-sm-6">
+		  			<h1 class="prequalify-field">
+		  				Monthly Debt 
+		  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Include all debts with regular periodic payments such as car payments, student loans, minimum Credit Card Payments, Child Support Payments. Do NOT include any monthly rent or mortgage you are currently paying, Credit Card Payments you pay off every month.">
+		  					<i class="fa fa-question-circle"></i>
+		  				</span>
+		  			</h1>
+		  		</div>
+		  		<div class="col-sm-6">
+			  		<%= prequal_form.text_field :debt, label: false, data: { role: 'money'} %>
+			  	</div>
+			</div>
+
+			<div class="row">
+		  		<div class="col-sm-6">
+		  			<h1 class="prequalify-field">
+		  				Down Payment
+		  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Your down payment directly effects how much you can afford! If you increase your down payment, you may be able to qualify for a larger loan.">
+		  					<i class="fa fa-question-circle"></i>
+		  				</span>
+		  			</h1>
+		  		</div>
+		  		<div class="col-sm-6">
+			  		<%= prequal_form.text_field :down_payment, label: false, data: { role: 'money'} %>
+			  	</div>
+			</div>
+
+	<% end %>
+
+		<div class="form-actions mar-top50 text-center">
+		<%= guest_form.button :submit, "Next >>", class: "btn-rbsubmit" %>
 		</div>
-
-		<div class="row">
-	  		<div class="col-sm-6">
-	  			<h1 class="prequalify-field">
-	  				Monthly Debt 
-	  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Include all debts with regular periodic payments such as car payments, student loans, minimum Credit Card Payments, Child Support Payments. Do NOT include any monthly rent or mortgage you are currently paying, Credit Card Payments you pay off every month.">
-	  					<i class="fa fa-question-circle"></i>
-	  				</span>
-	  			</h1>
-	  		</div>
-	  		<div class="col-sm-6">
-		  		<%= f.text_field :debt, label: false, data: { role: 'money'} %>
-		  	</div>
-		</div>
-
-		<div class="row">
-	  		<div class="col-sm-6">
-	  			<h1 class="prequalify-field">
-	  				Down Payment
-	  				<span class="has-popover" data-toggle="popover" data-placement="bottom" data-content="Your down payment directly effects how much you can afford! If you increase your down payment, you may be able to qualify for a larger loan.">
-	  					<i class="fa fa-question-circle"></i>
-	  				</span>
-	  			</h1>
-	  		</div>
-	  		<div class="col-sm-6">
-		  		<%= f.text_field :down_payment, label: false, data: { role: 'money'} %>
-		  	</div>
-		</div>
-
-	  <div class="form-actions mar-top50 text-center">
-	    <%= f.button :submit, "Next >>", class: "btn-rbsubmit" %>
-	  </div>
 	<% end %>
 </div>

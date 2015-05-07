@@ -15,21 +15,19 @@ class PrequalsController < ApplicationController
   end
 
   def new
-    @guest = Guest.find(params[:guest_id])
     @prequal = Prequal.new
     respond_with(@prequal)
   end
 
   def edit
-
   end
 
   def create
     @prequal = Prequal.new(prequal_params)
     if @prequal.save
-      redirect_to edit_prequal_path(id: @prequal.id)
+      redirect_to edit_prequal_path(@prequal)
     else
-      render :new
+      redirect_to :back
     end
   end
 

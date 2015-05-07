@@ -1,20 +1,57 @@
 class Guest < ActiveRecord::Base
+
+	include ActiveModel::Dirty
+
 	has_many :queries
-	has_one :prequal
 	accepts_nested_attributes_for :queries
-	accepts_nested_attributes_for :prequal
 
-	after_save :deliver_request_info_to_agent, if: :email
-
-	validates_presence_of :email, on: :update
-	validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/, on: :update
+	validates_presence_of :income, :debt, :down_payment
+	validates :email, presence: true, if: "email_page?"
+	validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/, if: "email_page?"
 
 	self.per_page = 20
 
+	before_create :strip_formatting_from_numbers
+
+	# Send emails
+	after_save :deliver_email_to_guest, if: :email_changed? # could potentially send email twice, if they input on guest#step4 and then update it on guest#results
+	after_save :deliver_email_to_agent, if: :email_changed?
+	after_save :deliver_email_to_lender, if: ( :yes_call_changed? || :yes_email_changed? )
+	after_save :deliver_update_email_to_agent, if: ( :yes_call_changed? || :yes_email_changed? )
+
 	private
 
-	# === EMAILS === #
-	def deliver_request_info_to_agent
-	    GuestMailer.request_form_submission(self).deliver
+	# === Emails === #
+
+	def deliver_email_to_guest
+    	GuestMailer.to_guest(self).deliver
+    end
+
+	def deliver_email_to_agent
+	    GuestMailer.to_agent(self).deliver
 	end
+
+	def deliver_email_to_lender
+    	GuestMailer.to_lender(self).deliver
+    end
+
+    def deliver_update_email_to_agent
+    	GuestMailer.to_agent_update(self).deliver
+    end
+
+    # === Number Formatting === #
+
+	def strip_formatting_from_numbers 	# to remove commas added to web form for readability
+		self.income = self.income.to_s.gsub!(/\D+/, '').to_i
+		self.debt = self.debt.to_s.gsub!(/\D+/, '').to_i
+		self.down_payment = self.down_payment.to_s.gsub!(/\D+/, '').to_i
+	end
+
+	def raw_income	# not sure what this is for. Can remove?
+	  self.income
+	end
+	def raw_income=(s)	# not sure what this is for. Can remove?
+	  self.income = s.gsub(/\D/, '')
+	end
+
 end

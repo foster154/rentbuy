@@ -1,6 +1,0 @@
-<div class="preapproval-results">
-	<% preapproved(@guest.income, @guest.debt, @guest.down_payment) %>
-	<p>Max monthly payment based on income and debts: <%= number_to_currency($max_monthly_payment, precision: 0) %></p>
-	<p>Based on your income and debts, you can prequalify for a house that costs <%= number_to_currency($can_afford_income, precision: 0) %>.</p>
-	<p>Based on your down payment, you can prequalify for a house that costs <%= number_to_currency($can_afford_down, precision: 0) %>.</p>
-</div>

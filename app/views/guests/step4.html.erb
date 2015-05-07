@@ -1,0 +1,46 @@
+<div class="max-width-wrapper">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="text-center mar-top40 congrats">Ready to Calculate!</h1>
+				<p class="text-center col-sm-8 col-sm-offset-2 mar-top10">First, we'll need your email address to verify you are a real person. <br>We'll also send you a copy of the results!</p>
+		</div>
+	</div>
+	<div class="col-md-10 col-md-offset-1 mar-top30">
+		<div class="row covered">
+
+			<div class="show-me">
+				<div class="col-xs-12 mar-top70">
+					<%= simple_form_for @guest do |f| %>
+						<%= f.error_notification %>
+						<%= f.input :email_page, :as => :hidden, :input_html => { :value => :true } %>
+						<%= f.input_field :email, label: false, placeholder: "Your Best Email Address (required)", required: true, class: "email-field" %>
+						<div class="form-actions mar-top50 text-center">
+							<%= f.button :submit, "Show My Results!", class: "btn-rbsubmit" %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="cover-me mar-top30">
+
+				<div class="col-sm-6">
+					<h1 class="text-center">Congratuations!</h1>
+					<div class="your-number-info">
+						<p>Based on the information already collected, <br /> you could afford for a home purchase of:</p>
+						<h1 class="mar-top20">$___,___</h1>
+						<p style="max-width: 500px;">Based on your income, you may qualify for <strong>$___,___</strong> if you could come up with 3.5% - 5% down or more.</p> 
+						<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>
+					</div>
+				</div>
+
+				<div class="col-sm-5 col-sm-offset-1">
+					<div class="house-area">
+						<%= image_tag 'house.jpg' %>
+					</div> <!-- /.lender-info -->
+				</div>
+
+			</div> <!-- /.cover-me -->
+
+		</div>
+	</div>
+</div> <!-- /.max-width-wrapper -->

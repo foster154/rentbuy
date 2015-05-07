@@ -1,0 +1,42 @@
+<div class="max-width-wrapper">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="text-center mar-top40 congrats">Congratuations!</h1>
+		</div>
+	</div>
+	<div class="col-sm-10 col-sm-offset-1 mar-top30">
+		<div class="row">
+			<div class="col-sm-6">
+				<%= render 'guests/partials/your_number' %>
+			</div>
+			<div class="col-sm-5 col-sm-offset-1">
+				<%= render 'guests/partials/lender_info' %>
+			</div>
+		</div>
+
+		<div class="row clear-both">
+			<div class="prequal-contact-thank-you">
+				<% if @guest.yes_call.present? %>
+					Thank you! Your lender will reach out to you by phone at the requested time!
+					<% elsif @guest.yes_email.present? %>
+					Thank you! Your lender will reach out to you by email soon!
+					<% else %>
+					Thank you! Your lender will reach out to you soon!
+				<% end %>
+				<div class="mar-top20 mar-bot20">Or give him a call at your convenience:</div>
+				<div class="lender-contact">
+					<%= image_tag 'lender-photo.jpg', class: 'lender-pic' %>
+					<div class="lender-info">
+						<div class="mar-top10"><strong>Gabe Crum</strong></div>
+						<div>Idaho Central Credit Union</div>
+						<div class="small">NMLS#: 1070585</div>
+						<div>Phone: (208) 846-7093 </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<%= render 'guests/partials/prequal_faqs' %>
+		
+	</div>
+</div> <!-- /.max-width-wrapper -->
