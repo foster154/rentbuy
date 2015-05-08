@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <div class="max-width-wrapper">
 	<div class="row">
 		<div class="col-xs-12">
@@ -13,7 +14,7 @@
 					<%= simple_form_for @guest do |f| %>
 						<%= f.error_notification %>
 						<%= f.input :email_page, :as => :hidden, :input_html => { :value => :true } %>
-						<%= f.input_field :email, label: false, placeholder: "Your Best Email Address (required)", required: true, class: "email-field" %>
+						<%= f.input_field :email, label: false, placeholder: "Your Best Email Address*", required: true, class: "email-field" %>
 						<div class="form-actions mar-top50 text-center">
 							<%= f.button :submit, "Show My Results!", class: "btn-rbsubmit" %>
 						</div>
@@ -43,3 +44,4 @@
 		</div>
 	</div>
 </div> <!-- /.max-width-wrapper -->
+</div> <!-- /.container-fluid -->
