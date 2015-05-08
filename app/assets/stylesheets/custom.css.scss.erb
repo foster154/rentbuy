@@ -36,8 +36,9 @@ h1,h2,h3,h4,h5,h6 {
 h1 { 
 	font-size: 36px; 
 	line-height: 30px; 
-	font-weight:700; 
+	font-weight:900; 
 	color: $ltblue;
+	line-height: 1.1;
 }
 h2 { 
 	font-size: 24px; 
@@ -82,6 +83,8 @@ small {
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
+a:hover, a:focus { text-decoration: none; }
 
 /*==========================================================================
   Misc & Adjust 
@@ -534,6 +537,12 @@ span.asterisk-lg {
 .prequal-form-checkmarks {
 	clear: both;
 	margin-bottom: 50px;
+	@media screen and (max-width: 991px) {
+		//display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	img {
 		float: left;
 		width: 60px;
@@ -551,6 +560,9 @@ span.asterisk-lg {
 		@media screen and (max-width: 1101px) {
 			padding-top: 10px;
 
+		}
+		@media screen and (max-width: 991px) {
+			font-weight: 500;
 		}
 		span {
 			font-size: 14px; 
@@ -717,6 +729,10 @@ section.thank-you {
 // ==========================================
 
 .prequal-fp-form {
+	@media screen and (max-width: 510px) {
+		margin-top: 70px;
+	}
+
 	input {
 		font-size: 18px;
 		width: 160px;
@@ -725,7 +741,7 @@ section.thank-you {
 		border-radius: 3px;
 		border: 1px solid $ltblue;
 		display: inline-block;
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 510px) {
 			margin: 5px auto;
 			display: block;
 		}
@@ -733,17 +749,28 @@ section.thank-you {
 }
 
 .prequalify-fp-field {
-	margin-top: 10px;
+	display: block;
+	width: 365px;
+	margin-top: 40px;
 	text-align:right;
 	color:$ltblue;
 	white-space: nowrap;
 	font-size: 24px;
 	@media screen and (max-width: 991px) {
+		margin: 0 auto 20px;
+		font-weight: 500;
+	}
+	@media screen and (max-width: 510px) {
 		text-align: center;
+		width: 100%;
+	}
+	.prequal-fp-label {
+		width: 190px;
+		white-space: nowrap;
 	}
 	i {
 		font-size: 24px;
-		padding-left: 5px;
+		//margin-right: 15px;
 		color: $ltgray;
 	}
 }
