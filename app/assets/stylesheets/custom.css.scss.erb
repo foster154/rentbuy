@@ -797,7 +797,7 @@ section.thank-you {
 	height: 480px;
 	margin: 0 auto;
 	@media screen and (max-width: 767px) {
-		height: 800px;
+		height: 300px;
 	}
 }
 
@@ -807,12 +807,21 @@ section.thank-you {
 	width: 100%;
 	background-color: rgba(255, 255, 255, .8);
 	z-index: 1000;
+	.show-me-contents {
+		margin-top: 70px;
+		@media (max-width: 767px) {
+			margin-top: 20px;
+		}
+	}
 }
 
 .cover-me {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	@media (max-width: 767px) {
+		display: none;
+	}
 }
 
 .house-area {

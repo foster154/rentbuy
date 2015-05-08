@@ -9,7 +9,7 @@
 		<div class="row covered">
 
 			<div class="show-me">
-				<div class="col-xs-12 mar-top70">
+				<div class="col-xs-12 show-me-contents">
 					<%= simple_form_for @guest do |f| %>
 						<%= f.error_notification %>
 						<%= f.input :email_page, :as => :hidden, :input_html => { :value => :true } %>
@@ -22,11 +22,10 @@
 			</div>
 
 			<div class="cover-me mar-top30">
-
 				<div class="col-sm-6">
-					<h1 class="text-center">Congratuations!</h1>
+					<h1 class="text-center mobile-hide">Congratuations!</h1>
 					<div class="your-number-info">
-						<p>Based on the information already collected, <br /> you could afford for a home purchase of:</p>
+						<p class="mobile-hide">Based on the information already collected, <br /> you could afford for a home purchase of:</p>
 						<h1 class="mar-top20">$___,___</h1>
 						<p style="max-width: 500px;">Based on your income, you may qualify for <strong>$___,___</strong> if you could come up with 3.5% - 5% down or more.</p> 
 						<p><em>Talk with a lender about loans requiring less than 3.5%.</em></p>

@@ -22,7 +22,7 @@
 				  			</div>
 					  	</div>
 				  		<div class="row">
-					  		<%= f.input :foreclosure_on_record, as: :radio_buttons, checked: false, label: false %>
+					  		<%= f.input :foreclosure_on_record, as: :radio_buttons, checked: false, label: false,:wrapper_html => { 'data-role' => 'controlgroup', 'data-type' => 'horizontal' } %>
 					  	</div>
 					</div>
 
