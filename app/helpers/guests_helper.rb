@@ -58,6 +58,12 @@ module GuestsHelper
 		# 	$your_number = "Sorry, an error has occured."
 		# end
 	end
+
+	def display_guest(guest)
+		guest_specs = [ guest.email, guest.name, guest.phone ]
+		guest_specs.join(" | ")
+	end
+
 end
 
 # module PrequalsHelper

@@ -1,0 +1,10 @@
+<% if guest.email || guest.phone %>
+<li>
+  <div class="guest-date"><%= guest.created_at.strftime("%d %b %Y") %></div>
+  <div>
+    <%= display_guest(guest) %> | <span>(their number coming soon)</span>
+  </div>
+  <br />
+</li>
+<% end %>
+<hr>
