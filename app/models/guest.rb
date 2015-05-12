@@ -42,9 +42,15 @@ class Guest < ActiveRecord::Base
     # === Number Formatting === #
 
 	def strip_formatting_from_numbers 	# to remove commas added to web form for readability
-		self.income = self.income.to_s.gsub!(/\D+/, '').to_i
-		self.debt = self.debt.to_s.gsub!(/\D+/, '').to_i
-		self.down_payment = self.down_payment.to_s.gsub!(/\D+/, '').to_i
+		if self.income.include? ","
+			self.income = self.income.to_s.gsub!(/\D+/, '').to_i
+		end
+		if self.debt.include? ","
+			self.debt = self.debt.to_s.gsub!(/\D+/, '').to_i
+		end
+		if self.down_payment.include? ","
+			self.down_payment = self.down_payment.to_s.gsub!(/\D+/, '').to_i
+		end
 	end
 
 	def raw_income	# not sure what this is for. Can remove?
