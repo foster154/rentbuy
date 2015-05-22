@@ -4,7 +4,7 @@ class GuestMailer < ActionMailer::Base
   def to_guest(guest)
     @guest = guest
     if Rails.env.production?
-    	mail to: @guest.email, bcc: "myrentwillbuy@gmail.com", reply_to: "gcrum@iccu.com", subject: "My Rent Will Buy: Congratuations!"
+    	mail to: @guest.email, bcc: "myrentwillbuy@gmail.com", reply_to: "stucker@benchmark.us", subject: "My Rent Will Buy: Congratuations!"
     else
     	mail to: "foster154@gmail.com", bcc: "myrentwillbuy@gmail.com", reply_to: "gcrum@iccu.com", subject: "(DEV) My Rent Will Buy: Congratuations!"
 	end
@@ -31,7 +31,7 @@ class GuestMailer < ActionMailer::Base
   def to_lender(guest)
     @guest = guest
     if Rails.env.production?
-      mail to: "gcrum@iccu.com", bcc: "myrentwillbuy@gmail.com, foster154@gmail.com, fred@boiserealestateteam.com, seth@boiserealestateguy.com", subject: "New Lead from My Rent Will Buy"
+      mail to: "stucker@benchmark.us", bcc: "myrentwillbuy@gmail.com, foster154@gmail.com, fred@boiserealestateteam.com, seth@boiserealestateguy.com", subject: "New Lead from My Rent Will Buy"
     else
       mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) New Prequal Lead from My Rent Will Buy"
     end
