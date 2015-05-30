@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
   	dashboard_path # takes user to dashboard after signing in (instead of root)
   end
+
+  private
+
+  def current_account
+  	Account.find_by_subdomain! request.subdomain
+  end
+  helper_method :current_account
+  
 end

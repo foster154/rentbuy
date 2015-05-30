@@ -6,7 +6,8 @@ class GuestsController < ApplicationController
   respond_to :html
 
   def index
-    @guests = Guest.paginate(:page => params[:page]).order(created_at: :desc)
+    # @guests = Guest.paginate(:page => params[:page]).order(created_at: :desc)
+    @guests = current_account.guests.paginate(:page => params[:page]).order(created_at: :desc)
     respond_with(@guests)
   end
 
@@ -89,7 +90,8 @@ class GuestsController < ApplicationController
     end
 
     def guest_params
-      params.require(:guest).permit(:name, 
+      params.require(:guest).permit(:account_id,
+                                    :name, 
                                     :email,
                                     :want_list,
                                     :beds,
