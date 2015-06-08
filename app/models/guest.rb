@@ -2,7 +2,7 @@ class Guest < ActiveRecord::Base
 
 	include ActiveModel::Dirty
 
-	has_one :account
+	belongs_to :account
 
 	has_many :queries
 	accepts_nested_attributes_for :queries

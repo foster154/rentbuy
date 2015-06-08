@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center mar-top30">Email Settings</h1>
+    <div class="col-sm-4 col-sm-offset-2 settings-form">
+      <%= simple_form_for @settings, :url => email_setting_path(@settings) do |f| %>
+  			
+  			<%= f.input :send_to_guest, label: false, inline_label: "Auto-send an email to new leads" %>
+  			<br>
+  			<%= f.input :reply_to_address, label: "Reply-to email address" %>
+  			<%= f.input :to_guest_subject, label: "Subject Line" %>
+  			<p>(file upload for lead email contents)</p>
+  			<%= f.file_field :to_guest_contents %>
+  			
+  			<hr>
+  			
+  			<%= f.input :new_lead_notification, label: false, inline_label: "Send me a notification of each new lead" %>
+  			<br>
+  			<%= f.input :send_leads_to_address, label: "Where should lead notifications be sent?" %>
+  			<%= f.input :new_lead_subject, label: "Subject Line" %>
+  			<p>(file upload for lead notification contents)</p>
+
+  			<% if current_user.is_agent? %>
+
+	  			<hr>
+
+	  			<%= f.input :updated_lead_notification, label: false, inline_label: "Send me a notification when a lead is updated" %>
+	  			<br>
+	  			<%= f.input :updated_lead_subject, label: "Subject Line" %>
+	  			<p>(file upload for lead notification contents)</p>
+
+  			<% end %>
+
+        <%= f.button :submit, "Save", class: "btn btn-info" %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-5 col-sm-offset-1">
+    <h3 class="text-center"><strong>Descriptions</strong></h3>
+    </div>
+  </div>
+</div>

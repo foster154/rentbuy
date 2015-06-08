@@ -185,6 +185,14 @@ a:hover, a:focus { text-decoration: none; }
 	padding-top: 100px;
 }
 
+.nav > li > a {
+	line-height: 3.2 !important;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+	background-color: transparent;
+}
+
 // ==========================================
 // Layout & Formatting
 // ==========================================
@@ -322,6 +330,23 @@ section#footer .copyright {
 // ==========================================
 // Forms
 // ==========================================
+
+@mixin rb-form {
+	input {
+		font-size: 16px;
+		padding: 12px;
+		margin: 5px 10px 10px;
+		width: 100%;
+		border-radius: 3px;
+		border: 1px solid $ltblue;
+		display: inline-block;
+		@media screen and (max-width: 510px) {
+			margin: 5px auto;
+			display: block;
+		}
+	}
+}
+
 
 .form-inputs .control-group {
 	margin: 20px 0;
@@ -1001,9 +1026,18 @@ ul.guest-list {
 	}
 }
 
-// ==========================================
+// =============
+// Settings Area
+// =============
+
+.settings-form {
+	@include rb-form;
+}
+
+
+// ================
 // Properties Table
-// ==========================================
+// ================
 
 .properties-table {
 	
@@ -1016,26 +1050,7 @@ ul.guest-list {
 /* ========================================
 Media queries
 ========================================= */
-// @media (min-width: 959px) and (max-width: 1199px) {
-// 	.navbar-nav {
-// 		margin-top: 20px;
-// 	}
-// }
 
-// @media only screen and (min-device-width : 979px) and (max-device-width : 1024px)  {
-
-// 	.navbar-nav {
-// 		margin-top: 20px;
-// 	}
-// }
-
-
-// @media only screen and (min-width: 768px) and (max-width: 959px) {
-
-// 	.navbar-nav {
-// 		margin-top: 20px;
-// 	}
-// }
 @media (max-width: 767px) {
 
 	.navbar.navbar-fixed-top {

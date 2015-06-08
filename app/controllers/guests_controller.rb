@@ -1,6 +1,8 @@
 class GuestsController < ApplicationController
 
+
   before_action :set_guest, only: [:show, :step2, :step3, :step4, :results, :final, :edit, :update, :destroy]
+  before_action :set_lender, only: [:results, :final]
   before_action :check_session, only: [ :results, :final ]
 
   respond_to :html
@@ -25,6 +27,7 @@ class GuestsController < ApplicationController
   end
 
   def results
+
   end
 
   def final
@@ -83,6 +86,10 @@ class GuestsController < ApplicationController
   private
     def set_guest
       @guest = Guest.find(params[:id])
+    end
+
+    def set_lender
+      @lender = current_account.users.where(role: 3).first
     end
 
     def check_session

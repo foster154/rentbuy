@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center mar-top30">Profile</h1>
+    <div class="col-sm-4 col-sm-offset-2 settings-form">
+      <%= simple_form_for @user do |f| %>
+        <%= f.input :name %>
+        <%= f.input :company %>
+        <%= f.input :email %>
+        <%= f.input :phone %>
+
+        <% if @user.is_lender? %>
+
+          <%= f.input :lender_number %>
+
+        <% end %>
+
+        <%= f.input :other_info %>
+  
+        <%= f.button :submit, "Save", class: "btn btn-info mar-top50" %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-5 col-sm-offset-1">
+    <p><strong>Profile Picture</strong></p>
+    <div class="user-image">
+    <%= image_tag @user.user_image.url(:thumb), class: 'lender-pic' %>
+    </div>
+    <%= simple_form_for @user do |f| %>
+      <%= f.file_field :user_image %>
+      <%= f.button :submit, "Upload & Save", class: "btn btn-info mar-top50" %>
+    <% end %>
+    </div>
+  </div>
+</div>

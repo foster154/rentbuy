@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525051005) do
+ActiveRecord::Schema.define(version: 20150605020627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,32 @@ ActiveRecord::Schema.define(version: 20150525051005) do
     t.string   "name"
     t.string   "city"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "email_settings", force: true do |t|
+    t.integer  "user_id"
+    t.string   "reply_to_address"
+    t.string   "send_leads_to_address"
+    t.boolean  "send_to_guest"
+    t.string   "to_guest_subject"
+    t.string   "to_guest_contents_file_name"
+    t.string   "to_guest_contents_content_type"
+    t.integer  "to_guest_contents_file_size"
+    t.datetime "to_guest_contents_updated_at"
+    t.boolean  "new_lead_notification"
+    t.string   "new_lead_subject"
+    t.string   "new_lead_email_contents_file_name"
+    t.string   "new_lead_email_contents_content_type"
+    t.integer  "new_lead_email_contents_file_size"
+    t.datetime "new_lead_email_contents_updated_at"
+    t.boolean  "updated_lead_notification"
+    t.string   "updated_lead_subject"
+    t.string   "updated_lead_email_contents_file_name"
+    t.string   "updated_lead_email_contents_content_type"
+    t.integer  "updated_lead_email_contents_file_size"
+    t.datetime "updated_lead_email_contents_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -85,12 +111,12 @@ ActiveRecord::Schema.define(version: 20150525051005) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                   default: "", null: false
+    t.string   "encrypted_password",      default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",           default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -100,6 +126,15 @@ ActiveRecord::Schema.define(version: 20150525051005) do
     t.string   "name"
     t.integer  "account_id"
     t.integer  "role"
+    t.string   "company"
+    t.string   "phone"
+    t.string   "lender_number"
+    t.string   "other_info"
+    t.string   "user_url"
+    t.string   "user_image_file_name"
+    t.string   "user_image_content_type"
+    t.integer  "user_image_file_size"
+    t.datetime "user_image_updated_at"
   end
 
   add_index "users", ["account_id"], name: "index_users_on_account_id", using: :btree

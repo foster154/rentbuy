@@ -1,9 +1,9 @@
 <div class="lender-contact">
-	<%= image_tag 'lender-photo.jpg', class: 'lender-pic' %>
+	<%= image_tag @lender.user_image.url(:thumb), class: 'lender-pic' %>
 	<div class="lender-info">
-		<div class="mar-top10"><strong>Dean & Shanna Tucker</strong></div>
-		<div>Benchmark Mortgage</div>
-		<div class="small">NMLS #103829 & #63357</div>
-		<div>Phone: (208) 287-1717</div>
+		<div class="mar-top10"><strong><%= @lender.name %></strong></div>
+		<div><%= @lender.company %></div>
+		<div class="small"><%= @lender.lender_number %></div>
+		<div><%= @lender.phone %></div>
 	</div>
 </div>

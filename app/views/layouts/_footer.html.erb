@@ -1,9 +1,10 @@
 <section id="footer" class="section footer">
 	<div class="container">
-
-		<div class="row align-center copyright">
-		<%= current_account.name %>
-		</div>
+		<% if Rails.env.development? %>
+			<div class="row align-center copyright">
+			<%= current_account.name %>
+			</div>
+		<% end %>
 		<div class="row align-center copyright">	
 			<div class="col-sm-12">
 				Silvercreek Realty Group | Copyright &copy; 2015 | 333 Rossi St Suite #100 Boise, ID 83705 | <a href="privacy-policy">Privacy Policy</a> | <a href="/fair-housing">Fair Housing</a>
