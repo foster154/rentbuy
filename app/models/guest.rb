@@ -18,28 +18,33 @@ class Guest < ActiveRecord::Base
 	# Send emails
 	after_save :deliver_email_to_guest, if: :email_changed? # could potentially send email twice, if they input on guest#step4 and then update it on guest#results
 	after_save :deliver_email_to_agent, if: :email_changed?
-	after_save :deliver_email_to_lender, if: ( :yes_call_changed? || :yes_email_changed? )
+	after_save :deliver_email_to_lender, if: :email_changed?
+	after_save :deliver_update_email_to_lender, if: ( :yes_call_changed? || :yes_email_changed? )
 	after_save :deliver_update_email_to_agent, if: ( :yes_call_changed? || :yes_email_changed? )
 
-	private
+	private	
 
 	# === Emails === #
 
 	def deliver_email_to_guest
-    	GuestMailer.to_guest(self).deliver
-    end
+  	GuestMailer.to_guest(self).deliver
+  end
 
 	def deliver_email_to_agent
 	    GuestMailer.to_agent(self).deliver
 	end
 
 	def deliver_email_to_lender
-    	GuestMailer.to_lender(self).deliver
-    end
+  	GuestMailer.to_lender(self).deliver
+  end
 
-    def deliver_update_email_to_agent
-    	GuestMailer.to_agent_update(self).deliver
-    end
+  def deliver_update_email_to_agent
+  	GuestMailer.to_agent_update(self).deliver
+  end
+
+  def deliver_update_email_to_lender
+  	GuestMailer.to_lender_update(self).deliver
+  end
 
     # === Number Formatting === #
 

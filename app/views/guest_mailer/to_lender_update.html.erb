@@ -1,0 +1,23 @@
+<h1>My Rent Will Buy has updated a new lead!</h1>
+
+<p>
+	Name: <strong><%= @guest.name %></strong><br />
+	Email: <strong><%= @guest.email %></strong><br />
+	Phone: <strong><%= @guest.phone %></strong><br />
+	Source: <strong>My Rent Will Buy</strong>
+</p>
+<p>
+	Call Time: <%= @guest.call_time %>
+</p>
+<p>
+	Income: <%= @guest.income %><br />
+	Monthly Debt: <%= @guest.debt %><br />
+	Down Payment: <%= @guest.down_payment %><br />
+	<br>
+	Short Sale or Foreclosure in past 24 months: <strong><%= @guest.foreclosure_on_record %></strong><br />
+	Need to sell current home before buying: <strong><%= @guest.sell_before_buy %></strong><br />
+	Intent to buy within next six months: <strong><%= @guest.buy_within_six_months %></strong><br />
+	Self-employed: <strong><%= @guest.self_employed %></strong><br />
+	Purchased a home in the past three years: <strong><%= @guest.first_time_buyer %></strong><br />
+	Served in the military: <strong><%= @guest.military %></strong><br />
+</p>
