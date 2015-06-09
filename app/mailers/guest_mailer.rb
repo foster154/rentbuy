@@ -32,18 +32,18 @@ class GuestMailer < ActionMailer::Base
   def to_lender(guest)
     @guest = guest
     if Rails.env.production?
-      mail to: "myrentwillbuy@robot.zapier.com", bcc: "myrentwillbuy@gmail.com, foster154@gmail.com", subject: "New Lead from My Rent Will Buy"
+      mail to: "myrentwillbuy@robot.zapier.com", bcc: "myrentwillbuy@gmail.com, foster154@gmail.com", subject: "Lead Info from MRWB"
     else
-      mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) New Prequal Lead from My Rent Will Buy"
+      mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) Lead Info from MRWB (Initial)"
     end
   end
 
   def to_lender_update(guest)
     @guest = guest
     if Rails.env.production?
-      mail to: "myrentwillbuy@robot.zapier.com", bcc: "myrentwillbuy@gmail.com", subject: "Updated Lead from My Rent Will Buy"
+      mail to: "myrentwillbuy@robot.zapier.com", bcc: "myrentwillbuy@gmail.com", subject: "Lead Info from MRWB"
     else
-      mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) Updated Prequal Lead from My Rent Will Buy"
+      mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) Lead Info from MRWB (Update)"
     end
   end
 
