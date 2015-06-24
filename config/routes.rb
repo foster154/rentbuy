@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   match '/final',             to: 'guests#final',              via: 'get'
   match '/privacy-policy',   	to: 'pages#privacy_policy',      via: 'get'
   match '/fair-housing',   		to: 'pages#fair_housing',      	 via: 'get'
+  match '/calculator',        to: 'pages#calculator',          via: 'get'
 
   # Back End
   match '/profile',           to: 'users#edit',                via: 'get'

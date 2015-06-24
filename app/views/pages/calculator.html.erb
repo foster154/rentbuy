@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<h1 class="text-center mar-top30">Sample Calcuator</h1>
+	</div>
+
+	<div class="row mar-top30">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="date-select">
+			<%= form_tag calculator_path, method: 'get' do %>
+			  <%= text_field_tag :income, params[:income] || "Annual Income" %>
+			  <%= text_field_tag :debt, params[:debt] || "Monthly Debt" %>
+			  <%= submit_tag "Calculate", name: nil, class: "btn btn-rbsubmit" %>
+			<% end %>
+			</div>
+		</div>
+	</div>
+
+	<% if params[:income] && params[:debt] %>
+
+	<% rb_calculator(params[:income], params[:debt], 0) %>
+
+	<div class="row mar-top30">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="your-number-info">
+				<p class="text-center">Based on the information you provided, <br /> you may be able to afford a home purchase of:</p>
+
+				<h1><%= number_to_currency(@max_fha_principle, precision: 0) %> <span class="small">with 3.5% down, or </span></h1>
+				<h1><%= number_to_currency(@max_conv_principle, precision: 0) %> <span class="small">with 5% down!</span></h1>
+
+				<p><em>Have more than a 5% down payment?</em> You may be able to afford more! This calculator is based on your income and debts, and so does not reflect the impact of a larger down payment. </p>
+		</div>
+	</div>
+
+	<% end %>
