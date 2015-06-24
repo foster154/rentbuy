@@ -1,49 +1,63 @@
 class GuestMailer < ActionMailer::Base
   default from: "myrentwillbuy@gmail.com"
 
-  def to_guest(guest)
+  def to_guest(guest)     # the initial email to the guest currently comes from the LENDER
     @guest = guest
     @lender = guest.account.users.where(role: 3).first
-    if Rails.env.production?
-    	mail to: @guest.email, bcc: "myrentwillbuy@gmail.com", reply_to: @lender.email, subject: "My Rent Will Buy: Congratuations!"
-    else
-    	mail to: "foster154@gmail.com", bcc: "myrentwillbuy@gmail.com", reply_to: @lender.email, subject: "(DEV) My Rent Will Buy: Congratuations!"
-	  end
-  end
-
-  def to_agent(guest)
-    @guest = guest
-    if Rails.env.production?
-    	mail to: "team.neal3@followupboss.me", bcc: "myrentwillbuy@gmail.com", subject: "New Lead from My Rent Will Buy"
-    else
-    	mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) New Lead from My Rent Will Buy"
-	  end
-  end
-
-  def to_agent_update(guest)
-    @guest = guest
-    if Rails.env.production?
-    	mail to: "team.neal3@followupboss.me", bcc: "myrentwillbuy@gmail.com", subject: "Updated Lead from My Rent Will Buy"
-    else
-    	mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) Updated Lead from My Rent Will Buy"
-	  end
-  end
-
-  def to_lender(guest)
-    @guest = guest
-    if Rails.env.production?
-      mail to: "myrentwillbuy@robot.zapier.com", bcc: "myrentwillbuy@gmail.com, foster154@gmail.com", subject: "Lead Info from MRWB"
-    else
-      mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) Lead Info from MRWB (Initial)"
+    if @lender.email_settings.send_to_guest?
+      if Rails.env.production?
+      	mail to: @guest.email, bcc: "myrentwillbuy@gmail.com", reply_to: @lender.email_settings.reply_to_address, subject: @lender.email_settings.to_guest_subject
+      else
+      	mail to: "foster154@gmail.com", bcc: "myrentwillbuy@gmail.com", reply_to: @lender.email_settings.reply_to_address, subject: @lender.email_settings.to_guest_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_guest"
+  	  end
     end
   end
 
-  def to_lender_update(guest)
+  def to_agent(guest)   # new lead notification sent to the AGENT
     @guest = guest
-    if Rails.env.production?
-      mail to: "myrentwillbuy@robot.zapier.com", bcc: "myrentwillbuy@gmail.com", subject: "Lead Info from MRWB"
-    else
-      mail to: "foster154@gmail.com", cc: "myrentwillbuy@gmail.com", subject: "(DEV) Lead Info from MRWB (Update)"
+    @agent = guest.account.users.where(role: 2).first
+    if @agent.email_settings.new_lead_notification?
+      if Rails.env.production?
+      	mail to: @agent.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com", subject: @agent.email_settings.new_lead_subject
+      else
+      	mail to: @agent.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @agent.email_settings.new_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_agent"
+  	  end
+    end
+  end
+
+  def to_agent_update(guest)    # updated lead notification sent to the AGENT
+    @guest = guest
+    @agent = guest.account.users.where(role: 2).first
+    if @agent.email_settings.updated_lead_notification?
+      if Rails.env.production?
+      	mail to: @agent.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com", subject: @agent.email_settings.updated_lead_subject
+      else
+      	mail to: @agent.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @agent.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}"
+  	  end
+    end
+  end
+
+  def to_lender(guest)    # new lead notification sent to the LENDER
+    @guest = guest
+    @lender = guest.account.users.where(role: 3).first
+    if @lender.email_settings.new_lead_notification?
+      if Rails.env.production?
+        mail to: @lender.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com, foster154@gmail.com", subject: @lender.email_settings.new_lead_subject
+      else
+        mail to: @lender.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.new_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_agent"
+      end
+    end
+  end
+
+  def to_lender_update(guest)   # updated lead notification sent to the LENDER
+    @guest = guest
+    @lender = guest.account.users.where(role: 3).first
+    if @lender.email_settings.updated_lead_notification?
+      if Rails.env.production?
+        mail to: @lender.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.updated_lead_subject
+      else
+        mail to: @lender.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}"
+      end
     end
   end
 

@@ -13,6 +13,11 @@
 				<div class="col-xs-12 show-me-contents">
 					<%= simple_form_for @guest do |f| %>
 						<%= f.error_notification %>
+
+						<% rb_calculator(@guest.income, @guest.debt, @guest.down_payment) %>
+						<%= f.input :fha_result, :as => :hidden, :input_html => { :value => @max_fha_principle.to_i } %>
+						<%= f.input :conv_result, :as => :hidden, :input_html => { :value => @max_conv_principle.to_i } %>
+
 						<%= f.input :email_page, :as => :hidden, :input_html => { :value => :true } %>
 						<%= f.input_field :email, label: false, placeholder: "Your Best Email Address*", required: true, class: "email-field" %>
 						<div class="form-actions mar-top50 text-center">

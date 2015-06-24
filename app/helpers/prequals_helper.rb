@@ -1,5 +1,9 @@
 module PrequalsHelper
 
+	###
+	# This is old and can be removed. Now using guests_helper.rb
+	###
+
 	def prequal_calculator(income, debt, down_payment)
 		income = income.to_i
 		debt = debt.to_i

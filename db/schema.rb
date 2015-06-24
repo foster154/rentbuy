@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605020627) do
+ActiveRecord::Schema.define(version: 20150616003547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20150605020627) do
     t.string   "subdomain",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "apr"
+    t.float    "ti"
   end
 
   create_table "areas", force: true do |t|
@@ -84,6 +86,8 @@ ActiveRecord::Schema.define(version: 20150605020627) do
     t.boolean  "sell_before_buy"
     t.boolean  "buy_within_six_months"
     t.integer  "account_id"
+    t.integer  "fha_result"
+    t.integer  "conv_result"
   end
 
   add_index "guests", ["account_id"], name: "index_guests_on_account_id", using: :btree

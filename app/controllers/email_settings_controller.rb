@@ -8,10 +8,10 @@ class EmailSettingsController < ApplicationController
   def update
   	if @settings.update(email_settings_params)
   		redirect_to email_settings_path
-  		flash[:notice] = "Settings updated!"
+  		flash[:notice] = "Settings updated"
   	else
   		redirect_to :back
-  		flash[:warning] = "Something went wrong."
+  		flash[:warning] = "Something went wrong!"
   	end
   end
 

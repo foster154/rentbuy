@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :account
+  has_one :email_settings
 
   has_attached_file :user_image, :styles => { :medium => "300x300#", :thumb => "110x110#" }, :default_url => "blank-person.jpg"
   validates_attachment_content_type :user_image, :content_type => /\Aimage\/.*\Z/

@@ -3,6 +3,7 @@ class GuestsController < ApplicationController
 
   before_action :set_guest, only: [:show, :step2, :step3, :step4, :results, :final, :edit, :update, :destroy]
   before_action :set_lender, only: [:results, :final]
+  before_action :set_loan_vars, only: [:step4, :results, :final]
   before_action :check_session, only: [ :results, :final ]
 
   respond_to :html
@@ -92,6 +93,11 @@ class GuestsController < ApplicationController
       @lender = current_account.users.where(role: 3).first
     end
 
+    def set_loan_vars
+      @apr = current_account.apr.to_f
+      @ti = current_account.ti.to_f
+    end
+
     def check_session
       redirect_to root_url unless request.session_options[:id] == @guest.session_id
     end
@@ -121,6 +127,8 @@ class GuestsController < ApplicationController
                                     :foreclosure_on_record,
                                     :sell_before_buy,
                                     :buy_within_six_months,
+                                    :fha_result,
+                                    :conv_result,
                                     queries_attributes: [:guest_id, :area_id, :payment])
     end
 
