@@ -10,7 +10,7 @@ module ApplicationHelper
 		debt = debt.to_i
 		down_payment = down_payment.to_i
 
-		max_monthly_payment = ((income / 12) - debt) * 0.45
+		max_monthly_payment = ((income / 12) - debt) * 0.38
 		fha_r = @apr + @ti + 0.0085
 		conv_r = @apr + @ti + 0.0059
 		term = 360
