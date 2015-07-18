@@ -5,6 +5,10 @@ Email: <%= @guest.email %><br>
 Phone: <%= @guest.phone %><br>
 Source: My Rent Will Buy<br>
 <br><br>
+Results:<br>
+FHA number: <%= number_to_currency(@guest.fha_result, precision: 0) %><br>
+Conventional number: <%= number_to_currency(@guest.conv_result, precision: 0) %><br>
+<br><br>
 Notes:<br>
 Short Sale or Foreclosure in past 24 months: <%= @guest.foreclosure_on_record %><br>
 Need to sell current home before buying: <%= @guest.sell_before_buy %><br>

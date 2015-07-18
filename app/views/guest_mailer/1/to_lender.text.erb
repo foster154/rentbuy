@@ -13,6 +13,9 @@ Income: <%= @guest.income %>
 Monthly Debt: <%= @guest.debt %>
 Down Payment: <%= @guest.down_payment %>
 
+FHA number: <%= number_to_currency(@guest.fha_result, precision: 0) %>
+Conventional number: <%= number_to_currency(@guest.conv_result, precision: 0) %>
+
 Short Sale or Foreclosure in past 24 months: <%= @guest.foreclosure_on_record %>
 Need to sell current home before buying: <%= @guest.sell_before_buy %>
 Intent to buy within next six months: <%= @guest.buy_within_six_months %>
