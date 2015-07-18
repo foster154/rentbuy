@@ -30,9 +30,9 @@ class GuestMailer < ActionMailer::Base
     @agent = guest.account.users.where(role: 2).first
     if @agent.email_settings.updated_lead_notification?
       if Rails.env.production?
-      	mail to: @agent.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com", subject: @agent.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}"
+      	mail to: @agent.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com", subject: @agent.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_agent_update"
       else
-      	mail to: @agent.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @agent.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}"
+      	mail to: @agent.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @agent.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_agent_update"
   	  end
     end
   end
@@ -42,9 +42,9 @@ class GuestMailer < ActionMailer::Base
     @lender = guest.account.users.where(role: 3).first
     if @lender.email_settings.new_lead_notification?
       if Rails.env.production?
-        mail to: @lender.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com, foster154@gmail.com", subject: @lender.email_settings.new_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_agent"
+        mail to: @lender.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com, foster154@gmail.com", subject: @lender.email_settings.new_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_lender"
       else
-        mail to: @lender.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.new_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_agent"
+        mail to: @lender.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.new_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_lender"
       end
     end
   end
@@ -54,9 +54,9 @@ class GuestMailer < ActionMailer::Base
     @lender = guest.account.users.where(role: 3).first
     if @lender.email_settings.updated_lead_notification?
       if Rails.env.production?
-        mail to: @lender.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.updated_lead_subject
+        mail to: @lender.email_settings.send_leads_to_address, bcc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_lender_update"
       else
-        mail to: @lender.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}"
+        mail to: @lender.email_settings.send_leads_to_address, cc: "myrentwillbuy@gmail.com", subject: @lender.email_settings.updated_lead_subject, template_path: "guest_mailer/#{@guest.account.id}", template_name: "to_lender_update"
       end
     end
   end
